@@ -6,4 +6,4 @@ They chose the name, not me
 
 Who is this, "they" ?
 
-Myself and Fish.
+Myself(Nathaniel) and Fish.

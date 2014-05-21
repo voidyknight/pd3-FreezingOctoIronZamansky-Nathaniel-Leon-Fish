@@ -23,6 +23,8 @@ public abstract class Player{
     public void setLevel(int n){level = n;}
     public void setCaffeine(double n){caffeine = n;}
 
+    public double attack(Monster target){return 0.0;}
+
     public abstract void skill(int n);
 
 }

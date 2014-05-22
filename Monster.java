@@ -20,6 +20,8 @@ public abstract class Monster{
     public void setLevel(int n){level = n;}
     
     public double attack(Player target){
+        return damage * Math.random();
+    }
 
     public abstract void skill(int n);
 

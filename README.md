@@ -26,10 +26,10 @@ II-2. Hardware<br>
 <br><br>
 III-1. Web Developer<br>
 	<br><i>increase caffeine</i>
-	<br><i>decrease health</i>
+	<br><i>decrease health</i><br>
 III-2. Game Developer<br>
 	<br><i>increase damage</i>
-	<br><i>increased chance of being infected by virus</i>
+	<br><i>increased chance of being infected by virus</i><br>
 III-3. Computer<br>
 	<br><i>increase defense</i>
 	<br><i>increased chance of being infected by virus</i>

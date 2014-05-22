@@ -32,29 +32,29 @@ III-2. Game Developer<br>
 	<br><i>increased chance of being infected by virus</i><br>
 III-3. Computer<br>
 	<br><i>increase defense</i>
-	<br><i>increased chance of being infected by virus</i>
+	<br><i>increased chance of being infected by virus</i><br>
 III-4. Robotics<br>
 	<br><i>increase damage</i>
 <br><br>
 IV-1. Anonymous<br>
 	<br><i>increase caffeine</i>
 	<br><i>increase defense</i>
-	<br><i>increased chance of failing at life</i>
+	<br><i>increased chance of failing at life</i><br>
 IV-2. Hacker<br>
-	<br><i>increase caffeine</i>
+	<br><i>increase caffeine</i><br>
 IV-3. Digitalize<br>
 	<br><i>increase defense</i>
-	<br><i>increased chance of being infected by virus</i>
+	<br><i>increased chance of being infected by virus</i><br>
 IV-4. Win the Game<br>
-	<br><i>increase health</i>
+	<br><i>increase health</i><br>
 IV-5. Biological Computer<br>
-	<br><i>increase health</i>
+	<br><i>increase health</i><br>
 IV-6. HAL<br>
 	<br><i>increase defense</i>
-	<br><i>increased chance of being infected by virus</i>
+	<br><i>increased chance of being infected by virus</i><br>
 IV-7. Cyberman<br>
 	<br><i>increase damage</i>
-	<br><i>increased chance of being infected by virus</i>
+	<br><i>increased chance of being infected by virus</i><br>
 IV-8. Cyborg<br>
 	<br><i>increase damage</i>
 	<br><i>increased chance of being infected by virus</i>

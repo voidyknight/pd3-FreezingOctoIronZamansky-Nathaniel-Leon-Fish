@@ -8,8 +8,6 @@ pd3-FreezingOctoIronZamansky-Nathaniel-Leon-Fish
 <body>
 </p>
 
-
-did some stuff(create player monster virus skillTree)
 </p>
 <h1>SKILL ATTRIBUTES </h1>
 <b>Picture this like a tree, with CS at the top. Roman numerals represent level.</b>

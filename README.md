@@ -6,9 +6,26 @@ pd3-FreezingOctoIronZamansky-Nathaniel-Leon-Fish
 </head>
 
 <body>
-</p>
+<h1>I. MEMBERS</h1><br><br>
+Fish Milnikiewicz, <i>our resident half-fish-half-human hybrid</i><br>
+Leon Frajmund, <i>our resident angry man</i><br>
+Nathaniel "Tim" Brassell, <i>our resident bad-ass pokemon master</i><br><br>
+	
+<h1>II. DESCRIPTION</h1><br><br>
+We are doing an rpg-style game involving the comp sci department involving an ASCII map [similar to the maze thing we did in class]<br><br>
 
-</p>
+<h1>III. WHAT WORKS</h1><br><br>
+haahha<br><br>
+
+
+<h1>IV. WHAT DOESN'T WORK</h1><br><br>
+HAHAHAHAHA<br><br>
+
+<h1>V. WHERE TO LOCATE THE COOL STUFF</h1><br><br>
+HAHAHAHAHA<br><br>
+
+
+
 <h1>SKILL ATTRIBUTES </h1>
 <b>Picture this like a tree, with CS at the top. Roman numerals represent level.</b>
 <p>

@@ -9,7 +9,7 @@ pd3-FreezingOctoIronZamansky-Nathaniel-Leon-Fish
 <h1>I. MEMBERS</h1><br><br>
 Fish Milnikiewicz, <i>our resident half-fish-half-human hybrid</i><br>
 Leon Frajmund, <i>our resident angry man</i><br>
-Nathaniel "Tim" Brassell, <i>our resident bad-ass pokemon master</i><br><br>
+Nathaniel "Tim" Brassell, <i>our resident bad-ass Digiman guy</i><br><br>
 	
 <h1>II. DESCRIPTION</h1><br><br>
 We are doing an rpg-style game involving the comp sci department involving an ASCII map [similar to the maze thing we did in class]<br><br>

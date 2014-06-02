@@ -25,7 +25,8 @@ HAHAHAHAHA<br><br>
 HAHAHAHAHA<br><br>
 
 
-
+<br><br><br><br><br>
+<i>other stuff</i><br><br>
 <h1>SKILL ATTRIBUTES </h1>
 <b>Picture this like a tree, with CS at the top. Roman numerals represent level.</b>
 <p>

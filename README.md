@@ -56,7 +56,6 @@ IV-2. Hacker<br>
 IV-3. Digitalize<br>
 	<br><i>increase defense</i>
 	<br><i>increased chance of being infected by virus</i><br>
-	<br><i>become a Digimen</i><br><br>
 IV-4. Win the Game<br>
 	<br><i>increase health</i><br><br>
 IV-5. Biological Computer<br>

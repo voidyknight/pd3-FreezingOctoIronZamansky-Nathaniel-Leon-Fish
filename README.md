@@ -15,7 +15,7 @@ Nathaniel "Tim" Brassell, <i>our resident bad-ass Digiman guy</i><br><br>
 We are doing an rpg-style game involving the comp sci department involving an ASCII map [similar to the maze thing we did in class]<br><br>
 
 <h1>III. WHAT WORKS</h1><br><br>
-haahha<br><br>
+hahaha<br><br>
 
 
 <h1>IV. WHAT DOESN'T WORK</h1><br><br>

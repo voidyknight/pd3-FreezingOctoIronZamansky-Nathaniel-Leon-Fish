@@ -1,7 +1,7 @@
 public abstract class Monster{
     protected String name;
     protected double health, damage, defense;
-    protected int XP, level;
+    protected int XP, level, range;
     protected skillTree skills;
     
 
@@ -10,6 +10,7 @@ public abstract class Monster{
     public double getDefense(){return defense;}
     public int getXP(){return XP;}
     public int getLevel(){return level;}
+    public int getRange(){return range;}
     public String getName(){return name;}
 
     public void setName(String n){name = n;}
@@ -18,9 +19,10 @@ public abstract class Monster{
     public void setDamage(double n){damage = n;}
     public void setDefense(double n){defense = n;}
     public void setLevel(int n){level = n;}
+    public void setRange(int n){range = n;}
     
     public double attack(Player target){
-        return damage * Math.random();
+        return ((damage * Math.random()) - target.getDefense());
     }
 
     public abstract void skill(int n);

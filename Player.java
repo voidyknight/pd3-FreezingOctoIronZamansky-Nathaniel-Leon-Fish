@@ -25,7 +25,7 @@ public abstract class Player{
     public void setCaffeine(double n){caffeine = n;}
     public void setRange(int n ){range = n;}
 
-    public double attack(Monster target){return (damage * Math.random()) - target.getDefense();}
+    public double attack(Monster target){return ((damage * Math.random()) - target.getDefense());}
 
     public abstract void skill(int n);
 

@@ -6,5 +6,6 @@ public class Virus extends Monster{
     super.setHealth(100);
     super.setDamage(5);
     super.setDefense(5);
+    super.setRange(1);
     }
 }

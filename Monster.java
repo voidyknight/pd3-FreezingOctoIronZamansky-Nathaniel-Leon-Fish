@@ -1,7 +1,7 @@
 public abstract class Monster{
     protected String name;
     protected double health, damage, defense;
-    protected int XP, level, range;
+    protected int XP, level, range, xpos, ypos;
     protected skillTree skills;
     
 

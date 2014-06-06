@@ -1,7 +1,12 @@
 public abstract class Player{
     protected String name, phrase;
+<<<<<<< HEAD
     protected double health, damage, defense, swag; //swag = mana
     protected int XP, level;
+=======
+    protected double health, damage, defense, caffeine;
+    protected int XP, level, range, xpos, ypos;
+>>>>>>> 3ed482b5b86b03c516654edb74af15ed4f79b3aa
     protected skillTree skills;
     
 
@@ -11,6 +16,7 @@ public abstract class Player{
     public double getCaffeine(){return caffeine;}
     public int getXP(){return XP;}
     public int getLevel(){return level;}
+    public int getRange(){return range;}
     public String getName(){return name;}
     public String talk(){return phrase;}
 
@@ -22,8 +28,9 @@ public abstract class Player{
     public void setDefense(double n){defense = n;}
     public void setLevel(int n){level = n;}
     public void setCaffeine(double n){caffeine = n;}
+    public void setRange(int n ){range = n;}
 
-    public double attack(Monster target){return 0.0;}
+    public double attack(Monster target){return ((damage * Math.random()) - target.getDefense());}
 
     public abstract void skill(int n);
 

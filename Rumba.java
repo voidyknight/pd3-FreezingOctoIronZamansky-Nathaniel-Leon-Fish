@@ -1,7 +1,7 @@
-public class Virus extends Monster{
+public class Rumba extends Monster{
 
-  public Virus(){
-    super.setName("Elk Cloner");
+  public Rumba(){
+    super.setName("Machine guns");
     super.setLevel(1);
     super.setHealth(100);
     super.setDamage(5);

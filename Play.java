@@ -28,7 +28,7 @@ greater health. Mr. Brown has extra swag, ang his swag regenerates more quickly.
 	    else if(response.toUpperCase().equals("MR.BROOKS")){
 		done = true;
 		p1 = new Brooks();
-	    }
+	   
 	    else if(response.toUpperCase().equals("MR.K")){
 		done = true;
 		p1 = new K();

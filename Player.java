@@ -1,12 +1,9 @@
 public abstract class Player{
     protected String name, phrase;
-<<<<<<< HEAD
-    protected double health, damage, defense, swag; //swag = mana
-    protected int XP, level;
-=======
-    protected double health, damage, defense, caffeine;
+
+    protected double health, damage, defense, caffeine, swag; //swag = mana
     protected int XP, level, range, xpos, ypos;
->>>>>>> 3ed482b5b86b03c516654edb74af15ed4f79b3aa
+
     protected skillTree skills;
     
 

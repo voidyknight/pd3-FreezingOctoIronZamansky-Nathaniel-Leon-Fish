@@ -14,7 +14,7 @@ public class Play(){
 	while(!done){
 	    response = Keyboard.readWord();
 	    if(response == null)
-		System.out.println("Invalid input. Valid inputs are:" + 
+		System.out.println("Invalid input N00B. Valid inputs are:" + 
 				   " \"Mr.Zamansky\", \"Mr.Brooks\","+
 				   " \"Mr.Brown\", or \"Mr.K\".");
 	    else if(response.toUpperCase().equals("MR.ZAMANSKY")){
@@ -34,7 +34,7 @@ public class Play(){
 		p1 = new K();
 	    }
 	    else
-		System.out.println("Invalid input. Valid inputs are:" + 
+		System.out.println("Invalid input N00B. Valid inputs are:" + 
 				   " \"Mr.Zamansky\", \"Mr.Brooks\","+
 				   " \"Mr.Brown\", or \"Mr.K\".");
 	}

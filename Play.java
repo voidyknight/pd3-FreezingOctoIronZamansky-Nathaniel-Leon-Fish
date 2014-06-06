@@ -39,7 +39,7 @@ public class Play(){
 				   " \"Mr.Brown\", or \"Mr.K\".");
 	}
     }
-        public void Player'smove(){
+        public void Playersmove(){
         s = Keyboard.readWord();
         s = s.toUpperCase;
         System.out.println("Where would you like to move?")

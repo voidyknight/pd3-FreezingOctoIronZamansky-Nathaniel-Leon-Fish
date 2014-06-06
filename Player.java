@@ -1,7 +1,7 @@
 public abstract class Player{
     protected String name, phrase;
     protected double health, damage, defense, caffeine;
-    protected int XP, level, range;
+    protected int XP, level, range, xpos, ypos;
     protected skillTree skills;
     
 

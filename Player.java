@@ -1,7 +1,7 @@
 public abstract class Player{
     protected String name, phrase;
 
-    protected double health, damage, defense, schwag; //schwag = mana
+    protected double health, damage, defense, swag; //swag = mana
     protected int XP, level, range, xpos, ypos;
 
     protected skillTree skills;
@@ -10,7 +10,7 @@ public abstract class Player{
     public double getHealth(){return health;}
     public double getDamage(){return damage;}
     public double getDefense(){return defense;}
-    public double getSchwag(){return schwag;}
+    public double getSwag(){return swag;}
     public int getXP(){return XP;}
     public int getLevel(){return level;}
     public int getRange(){return range;}
@@ -26,7 +26,7 @@ public abstract class Player{
     public void setDamage(double n){damage = n;}
     public void setDefense(double n){defense = n;}
     public void setLevel(int n){level = n;}
-    public void setSchwag(double n){schwag = n;}
+    public void setSwag(double n){swag = n;}
     public void setRange(int n ){range = n;}
     public void setXpos(int n){xpos = n;}
     public void setYpos(int n){ypos = n;}

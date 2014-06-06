@@ -12,6 +12,8 @@ public abstract class Player{
     public int getXP(){return XP;}
     public int getLevel(){return level;}
     public int getRange(){return range;}
+    public int getXpos(){return xpos;}
+    public int getYpos(){return ypos;}
     public String getName(){return name;}
     public String talk(){return phrase;}
 
@@ -24,6 +26,8 @@ public abstract class Player{
     public void setLevel(int n){level = n;}
     public void setCaffeine(double n){caffeine = n;}
     public void setRange(int n ){range = n;}
+    public void setXpos(int n){xpos = n;}
+    public void setYpos(int n){ypos = n;}
 
     public double attack(Monster target){return ((damage * Math.random()) - target.getDefense());}
 

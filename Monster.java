@@ -2,9 +2,9 @@ public abstract class Monster{
     protected String name;
     protected double health, damage, defense;
     protected int XP, level, range, xpos, ypos;
-    protected skillTree skills;
+    protected SkillTree skills;
+    protected int ID;
     
-
     public double getHealth(){return health;}
     public double getDamage(){return damage;}
     public double getDefense(){return defense;}
@@ -14,6 +14,7 @@ public abstract class Monster{
     public int getXpos(){return xpos;}
     public int getYpos(){return ypos;}
     public String getName(){return name;}
+    public int getID(){return ID;}
 
     public void setName(String n){name = n;}
     public void setHealth(double n){health = n;}
@@ -24,7 +25,8 @@ public abstract class Monster{
     public void setRange(int n){range = n;}
     public void setXpos(int n){xpos = n;}
     public void setYpos(int n){ypos = n;}
-    
+    public void setID(int n){ID = n;}
+
     public double attack(Player target){
         return ((damage * Math.random()) - target.getDefense());
     }

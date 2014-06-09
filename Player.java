@@ -5,7 +5,7 @@ public abstract class Player{
     protected double health, damage, defense, swag; //swag = mana
     protected int XP, level, range, xpos, ypos;
 
-    protected skillTree skills;
+    protected SkillTree skills;
     
 
     public double getHealth(){return health;}
@@ -37,8 +37,8 @@ public abstract class Player{
 	Monster target = null;
 	for(int x = -1; x < 2; x ++){
 	    for(int y = -1; y < 2; y ++){
-		if(!Map.get(x,y).equals(" ") && !Map.get(x,y).equals("#") && !Map.get(x,y).equals("p")){
-		    target = Map.getMonster(x,y);
+		if(!map.get(x,y).equals(" ") && !map.get(x,y).equals("#") && !map.get(x,y).equals("p")){
+		    target = map.getMonster(x,y);
 		    x += 10;
 		    y += 10;
 		}

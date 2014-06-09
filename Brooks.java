@@ -6,12 +6,9 @@ public class Brooks extends Player{
     setSwagRegenSpeed(4);
     setHealthRegenSpeed(6);
     setDamage(100/6);
-    setDefense(1.1001);
+    setDefense(5);
     setRange(1);
-    setName("Mistear Schwager");
-    setPhrase("Wassssssssssup");
+    setName("Santa Clause");
+    setPhrase("HoHoHo");
   }
-
-
-
 }

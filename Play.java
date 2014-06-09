@@ -39,31 +39,4 @@ public class Play(){
 				   " \"Mr.Brown\", or \"Mr.K\".");
 	}
     }
-        public void Playersmove(){
-        s = Keyboard.readWord();
-        s = s.toUpperCase;
-        System.out.println("Where would you like to move?")
-        if (s == null){
-        	System.out.println("Invalid input. Valid inputs are up, down, left or right");
-        }
-        else if (s.equals("W")){
-            P1.setYpos(P1.getYpos() + 1);
-        }
-        else if (s.equals("D")){
-            P1.setXpos(P1.getXpos() + 1);
-        }
-        else if (s.eqauls("S")){
-            P1.setYpos(P1.getYpos() - 1);
-        }
-        else if( s.equals("A")){
-            P1.setXpos(P1.getXpos() - 1);
-        }
-        else
-        System.out.println("Invalid input. Valid inputs are up, down, left or right");
-    }
-
-
-
-
-
 }

@@ -3,7 +3,7 @@ public abstract class Player{
     protected Map map;
 
     protected double health, damage, defense, swag; //swag = mana
-    protected int XP, level, range, xpos, ypos;
+    protected int XP, level, range, xpos, ypos, swagRegenSpeed, healthRegenSpeed;
 
     protected SkillTree skills;
     
@@ -18,6 +18,8 @@ public abstract class Player{
     public int getRange(){return range;}
     public int getXpos(){return xpos;}
     public int getYpos(){return ypos;}
+    public int getSwagRegenSpeed(){return swagRegenSpeed;}
+    public int getHealthRegenSpeed(){return healthRegenSpeed;}
     public String getName(){return name;}
     public String talk(){return phrase;}
 
@@ -32,6 +34,8 @@ public abstract class Player{
     public void setRange(int n ){range = n;}
     public void setXpos(int n){xpos = n;}
     public void setYpos(int n){ypos = n;}
+    public void setSwagRegenSpeed(int n){swagRegenSpeed = n;}
+    public void setHealthRegenSpeed(int n){healthRegenSpeed = n;}
 
     public void attack(){
 	Monster target = null;

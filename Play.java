@@ -14,7 +14,7 @@ public class Play(){
 	while(!done){
 	    response = Keyboard.readWord();
 	    if(response == null)
-		System.out.println("Invalid input N00B. Valid inputs are:" + 
+		System.out.println("Invalid input. Valid inputs are:" + 
 				   " \"Mr.Zamansky\", \"Mr.Brooks\","+
 				   " \"Mr.Brown\", or \"Mr.K\".");
 	    else if(response.toUpperCase().equals("MR.ZAMANSKY")){
@@ -34,7 +34,7 @@ public class Play(){
 		p1 = new K();
 	    }
 	    else
-		System.out.println("Invalid input N00B. Valid inputs are:" + 
+		System.out.println("Invalid input. Valid inputs are:" + 
 				   " \"Mr.Zamansky\", \"Mr.Brooks\","+
 				   " \"Mr.Brown\", or \"Mr.K\".");
 	}
@@ -44,7 +44,7 @@ public class Play(){
         s = s.toUpperCase;
         System.out.println("Where would you like to move?")
         if (s == null){
-        	System.out.println("Invalid input N00B. Valid inputs are up, down, left or right");
+        	System.out.println("Invalid input. Valid inputs are up, down, left or right");
         }
         else if (s.equals("UP")){
             P1.setYpos(P1.getYpos() + 1);
@@ -59,7 +59,7 @@ public class Play(){
             P1.setXpos(P1.getXpos() - 1);
         }
         else
-        System.out.println("Invalid input N00B. Valid inputs are up, down, left or right");
+        System.out.println("Invalid input. Valid inputs are up, down, left or right");
     }
 
 

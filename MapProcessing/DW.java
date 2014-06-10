@@ -8,7 +8,7 @@ public DW(){
     setDamage(100/5);
     setDefense(2.2);
     setRange(2);
-    setName("");
-    setPhrase("");
+    setName("JonAlf Dryland-Weaver");
+    setPhrase("I hava a website!");
     }
 }

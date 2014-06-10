@@ -9,6 +9,6 @@ public DW(){
     setDefense(2.2);
     setRange(2);
     setName("JonAlf Dryland-Weaver");
-    setPhrase("I hava a website!");
+    setPhrase("I have a website!");
     }
 }

@@ -1,5 +1,5 @@
-import cs1.Keyboard;
-public class Play(){
+//import cs1.Keyboard;
+/*public class Play(){
     private Player p1;
 
     public Play(){
@@ -39,4 +39,4 @@ public class Play(){
 				   " \"Mr.Brown\", or \"Mr.K\".");
 	}
     }
-}
+}*/

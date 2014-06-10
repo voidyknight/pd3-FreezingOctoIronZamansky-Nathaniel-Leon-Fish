@@ -18,4 +18,8 @@ class Cell{
     fill(c);
     rect(x,y,w,h);
   }
+  
+  color getColor(){
+    return c; 
+  }
 }

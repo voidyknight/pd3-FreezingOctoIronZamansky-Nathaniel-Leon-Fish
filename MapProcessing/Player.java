@@ -59,6 +59,7 @@ public abstract class Player{
 			 ((damage * Math.random()) - target.getDefense()));
     }
 
+
     public void skill(int n){
 	if(n == 2 || n == 3 || n == 7 || n > 10)
 	    return; //all are passive skills and cannot be "activated"
@@ -83,5 +84,6 @@ public abstract class Player{
 	if(n==10)
 	    return; //invincible()
 	}
+
 
 }

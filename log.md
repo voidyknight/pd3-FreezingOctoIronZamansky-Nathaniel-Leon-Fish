@@ -12,3 +12,6 @@ FISH: ok so I finished the map file reading in stuff. In order to do this I adde
 
 6/9/14<br>
 FISH: oof just finished a ~3 hr coding marathon. Saying that the processing editing interface is bad is an understatement. Anyhoo, I wrote some processing code that reads a text file and displays it in a colorful fashion. The next step would be to translate the "cells" into their respective class types (player, monster...). Also, for some reason the maps look a bit distorted. Also, keyboard input.
+
+5/29/14 - 6/10/14<br>
+Nathaniel: Teacher classes made, maps made.

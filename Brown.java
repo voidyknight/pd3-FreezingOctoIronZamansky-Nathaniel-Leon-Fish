@@ -6,7 +6,7 @@ public class Brown extends Player{
     setSwagRegenSpeed(6);
     setHealthRegenSpeed(4);
     setDamage(100/6);
-    setDefense(1.100000000000000000000001);
+    setDefense(1.1);
     setRange(1);
     setName("Mistear Schwager");
     setPhrase("Wassssssssssup");

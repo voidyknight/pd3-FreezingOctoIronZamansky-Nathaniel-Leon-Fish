@@ -1,6 +1,7 @@
 Cell[][] map;
 int cols = 150;
 int rows = 30;
+Brown x = new Brown();
 
 void setup(){
   size(1500,300);
@@ -34,8 +35,11 @@ void setup(){
   }
 }
 
+
 void draw(){
+
   background(255);
+  
   for (int i=0;i<rows;i++){
     for (int j=0;j<cols;j++){
       map[i][j].display();

@@ -8,7 +8,7 @@ public class K extends Player{
     setDamage(100/4);
     setDefense(1.1);
     setRange(1);
-    setName("");
-    setPhrase("");
+    setName("Son of Konstantin");
+    setPhrase("Learn To D&D N00B");
   }
 }

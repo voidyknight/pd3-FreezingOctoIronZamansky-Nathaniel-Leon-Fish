@@ -46,6 +46,19 @@ void draw(){
     }
   }
   
+void processCells(){
+ int (int c = 0; c < 150; c++){
+  int (int r = 0; r < 30; r++){
+   if (map[r][c].color().equals(#33FF99)){
+     //convert to player  
+   }
+  }
+ } 
+}
+
+
+}  
+  
 }
 
   

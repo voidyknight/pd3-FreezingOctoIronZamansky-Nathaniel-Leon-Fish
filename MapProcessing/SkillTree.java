@@ -1,5 +1,5 @@
 import java.util.*;
-import cs1.Keyboard;
+//import cs1.Keyboard;
 public class SkillTree{
     private final String[] skills = {null, "CS", "Software", "Hardware", 
 				     "Web Developer", "Game Developer",
@@ -21,7 +21,7 @@ public class SkillTree{
 			   skills[2*acquiredSkills[last] + 1]);
 	int response = -1; boolean end = false;
 	while(!end){
-	    response = Keyboard.readInt();
+	    //response = Keyboard.readInt();
 	    if(response == 1 || response == 2)
 		end = true;
 	    else

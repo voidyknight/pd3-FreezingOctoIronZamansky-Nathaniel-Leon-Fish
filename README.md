@@ -33,46 +33,36 @@ HAHAHAHAHA<br><br>
 I.CS 
 <br><br>
 II-1. Software<br>
+<br><i>Increase swag<br></i>
 II-2. Hardware<br>
+<br><i>Increase damage</i><br>
 <br><br>
 III-1. Web Developer<br>
-	<br><i>increase caffeine</i>
-	<br><i>decrease health</i><br><br>
+	<br><i>Confuses enemies (random movement)</i><br><br>
 III-2. Game Developer<br>
-	<br><i>increase damage</i>
-	<br><i>increased chance of being infected by virus</i><br><br>
+	<br><i>Explosion in a small radius</i><br><br>
 III-3. Computer<br>
-	<br><i>increase defense</i>
-	<br><i>increased chance of being infected by virus</i><br><br>
+	<br><i>Freezes enemies for x seconds</i><br><br>
 III-4. Robotics<br>
-	<br><i>increase damage</i>
+	<br><i>Greater attack range</i>
 <br><br>
 IV-1. Anonymous<br>
-	<br><i>increase caffeine</i>
-	<br><i>increase defense</i>
-	<br><i>increased chance of failing at life</i><br><br>
+	<br><i>Makes player invisible for x seconds</i><br><br>
 IV-2. Hacker<br>
-	<br><i>increase caffeine</i><br><br>
+	<br><i>Turn enemies against one another</i><br><br>
 IV-3. Digitalize<br>
-	<br><i>increase defense</i>
-	<br><i>increased chance of being infected by virus</i><br><br>
+	<br><i>Temporary invincibility</i><br><br>
 IV-4. Win the Game<br>
 <<<<<<< HEAD
-	<br><i>God Mode</i><br>
-=======
-	<br><i>increase health</i><br><br>
->>>>>>> 3ed482b5b86b03c516654edb74af15ed4f79b3aa
+	<br><i>God Mode (actually Rick Rolls)</i><br>
 IV-5. Biological Computer<br>
-	<br><i>increase health</i><br><br>
+	<br><i>Faster Regeneration of Swag and Health; greater damage</i><br><br>
 IV-6. HAL<br>
-	<br><i>increase defense</i>
-	<br><i>increased chance of being infected by virus</i><br><br>
+	<br><i>10% chance of randomly killing an enemy (except for Boss)</i><br><br>
 IV-7. Cyberman<br>
-	<br><i>increase damage</i>
-	<br><i>increased chance of being infected by virus</i><br><br>
+	<br><i>Increases health, damage, and defense significantly</i><br><br>
 IV-8. Cyborg<br>
-	<br><i>increase damage</i>
-	<br><i>increased chance of being infected by virus</i><br><br>
+	<br><i>Automatically shoots bullets, greater damage and defense</i><br><br>
 </p>
 
 </body>

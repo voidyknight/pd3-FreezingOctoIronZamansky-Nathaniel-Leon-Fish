@@ -59,6 +59,6 @@ public abstract class Player{
 			 ((damage * Math.random()) - target.getDefense()));
     }
 
-    public abstract void skill(int n);
+    public void skill(int n);
 
 }

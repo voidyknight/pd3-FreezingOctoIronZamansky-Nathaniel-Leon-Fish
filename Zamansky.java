@@ -8,7 +8,7 @@ public class Zamansky extends Player{
     setDamage(100/6);
     setDefense(1.1);
     setRange(3);
-    setName("");
-    setPhrase("");
+    setName("Mr. Baldy");
+    setPhrase("I like pancakes");
   }
 }

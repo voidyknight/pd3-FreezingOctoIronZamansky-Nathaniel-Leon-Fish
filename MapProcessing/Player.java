@@ -59,6 +59,29 @@ public abstract class Player{
 			 ((damage * Math.random()) - target.getDefense()));
     }
 
-    public void skill(int n);
+    public void skill(int n){
+	if(n == 2 || n == 3 || n == 7 || n > 10)
+	    return; //all are passive skills and cannot be "activated"
+	boolean go = false;
+	for(int x : skills.acquiredSkills) //checks to see if has skill
+	    if(n == x)
+		go = true;
+	if(!go)
+	    return;
+	if(n == 1)
+	    return;//shoot()
+	if(n == 4)
+	    return; //confuse()
+	if(n==5)
+	    return; //explosion()
+	if(n==6)
+	    return; //freeze()
+	if(n==8)
+	    return; //invisible()
+	if(n==9)
+	    return; //hack()
+	if(n==10)
+	    return; //invincible()
+	}
 
 }

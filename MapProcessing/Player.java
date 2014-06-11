@@ -4,7 +4,7 @@ public abstract class Player{
 
     protected double health, damage, defense, swag; //swag = mana
     protected int XP, level, range, xpos, ypos, swagRegenSpeed, healthRegenSpeed;
-
+    protected boolean HAL = false; //turns true when HAL skill is activated (10% chance of killing a random enemy)
     protected SkillTree skills;
     
 

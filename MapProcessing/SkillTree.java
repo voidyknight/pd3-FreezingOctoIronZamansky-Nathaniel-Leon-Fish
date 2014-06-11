@@ -11,7 +11,7 @@ public class SkillTree{
 
     public SkillTree(){}
 
-    public void getNewSkill(){
+    public void getNewSkill(Player p){
 	int last = 3;
 	while(acquiredSkills[last] < 0)
 	    last --;
@@ -32,6 +32,39 @@ public class SkillTree{
 	    acquiredSkills[last + 1] = 2*acquiredSkills[last];
 	else
 	    acquiredSkills[last + 1] = 2*acquiredSkills[last] + 1;
+	    
+	    //immediately activating passive skills 2, 3, 7, 11, 12, 13, 14, 15
+	    if(acquiredSkills[last + 1] == 2){
+	    	p.setSwag(p.getSwag() + 30.0);
+	    }	
+	    if(acquiredSkills[last + 1] == 3){
+	    	p.setDamage(p.getDamage() + 15.0);
+	    }
+	    if(acquiredSkills[last + 1] == 7){
+	    	p.getRange(p.getRange()*2);
+	    }
+	    if(acquiredSkills[last + 1] == 11){
+	    	return; //rickrolls; change this later
+	    }	    
+	    if(acquiredSkills[last + 1] == 12){
+	    	p.setSwagRegenSpeed(p.getSwagRegenSpeed() * 4);
+	    	p.setHealthRegenSpeed(p.getHealthRegenSpeed() * 4);
+	    	p.setDamage(p.getDamage() * 4);
+	    }	
+	    if(acquiredSkills[last + 1] == 13){
+	    	p.setHAL(true);
+	    }
+	    if(acquiredSkills[last + 1] == 14){
+	    	p.setMaxHealth(p.getMaxHealth() * 2);
+	    	p.setMaxSwag(p.getMaxSwag() * 2);
+	    	p.setDamage(p.getDamage() * 3);
+	    	p.setDefense(p.getDefense() * 3);
+	    }
+	    if(acquiredSkills[last + 1] == 15){
+	    	p.setDefense(p.getDefense() * 4);
+	    	p.setDamage(p.getDamage() * 4);
+	    	p.setCyborg(true);
+	    }	    
     }
 
     public void listSkills(){

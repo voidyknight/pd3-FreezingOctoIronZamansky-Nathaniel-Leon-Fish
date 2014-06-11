@@ -2,9 +2,10 @@ public abstract class Player{
     protected String name, phrase;
     protected Map map;
 
-    protected double health, damage, defense, swag; //swag = mana
+    protected double health, damage, defense, swag, maxHealth, maxSwag; //swag = mana
     protected int XP, level, range, xpos, ypos, swagRegenSpeed, healthRegenSpeed;
-    protected boolean HAL = false; //turns true when HAL skill is activated (10% chance of killing a random enemy)
+    protected boolean HAL = false;//turns true when HAL skill is activated (10% chance of killing a random enemy)
+    protected boolean cyborg = false; //starts shooting bullets when cyborg skill is activated
     protected SkillTree skills;
     
 
@@ -12,7 +13,10 @@ public abstract class Player{
     public double getDamage(){return damage;}
     public double getDefense(){return defense;}
     public double getSwag(){return swag;}
-    public boolean getHAL(){return HAL};
+    public boolean getHAL(){return HAL;}
+    public boolean getcCyborg(){return cyborg;}
+    public double getMaxHealth(){return maxHealth;}
+    public double getMaxSwag(){return maxSwag;}
 
     public int getXP(){return XP;}
     public int getLevel(){return level;}
@@ -37,7 +41,10 @@ public abstract class Player{
     public void setYpos(int n){ypos = n;}
     public void setSwagRegenSpeed(int n){swagRegenSpeed = n;}
     public void setHealthRegenSpeed(int n){healthRegenSpeed = n;}
-    public void setHAL(boolean n){HAL = n};
+    public void setHAL(boolean n){HAL = n;}
+public void setCyborg(boolean n){cyborg = n;}
+public void setMaxHealth(double n){maxHealth = n;}
+public void setMaxSwag(double n){maxSwag = n;}
 
     public void attack(){
 	Monster target = null;

@@ -12,6 +12,7 @@ public abstract class Player{
     public double getDamage(){return damage;}
     public double getDefense(){return defense;}
     public double getSwag(){return swag;}
+    public boolean getHAL(){return HAL};
 
     public int getXP(){return XP;}
     public int getLevel(){return level;}
@@ -36,6 +37,7 @@ public abstract class Player{
     public void setYpos(int n){ypos = n;}
     public void setSwagRegenSpeed(int n){swagRegenSpeed = n;}
     public void setHealthRegenSpeed(int n){healthRegenSpeed = n;}
+    public void setHAL(boolean n){HAL = n};
 
     public void attack(){
 	Monster target = null;

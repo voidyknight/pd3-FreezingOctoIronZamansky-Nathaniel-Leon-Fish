@@ -1,4 +1,4 @@
-public class DW extends Player{
+public class DW extends Monster{
 
 public DW(){
     setSwag(125.0);

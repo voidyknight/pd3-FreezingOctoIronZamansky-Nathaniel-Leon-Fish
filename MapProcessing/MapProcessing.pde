@@ -96,39 +96,47 @@ void draw(){
      
     case EAST:
       if(map[y/10][(x-1)/10].getColor() == #FFFFFF){
-       x++;
-       player.get(0).setXpos(player.get(0).getXpos()+1);
+        x++;
+        player.get(0).setXpos(player.get(0).getXpos()+1);
       }
       break;
       
     case SOUTH: 
       if(map[(y+1)/10][x/10].getColor() == #FFFFFF){
-       y++; 
-       player.get(0).setYpos(player.get(0).getYpos()-1);
+        y++; 
+        player.get(0).setYpos(player.get(0).getYpos()-1);
       }
       break;
       
     case WEST: 
-      if(map[y/10][(x+11)/10].getColor() == #FFFFFF){
-       x--;
-       player.get(0).setXpos(player.get(0).getXpos()-1);
+      if(map[y/10][(x+1)/10].getColor() == #FFFFFF){
+        x--;
+        player.get(0).setXpos(player.get(0).getXpos()-1);
       }
       break;
     case NORTH|EAST: 
-      y--; x++; 
-      player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()+1);
+      if(map[y-1/10][(x+1)/10].getColor() == #FFFFFF){
+        y--; x++; 
+        player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()+1);
+      }
       break;
-    case NORTH|WEST: 
-      y--; x--; 
-      player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()-1);
+    case NORTH|WEST:
+      if(map[y-1/10][(x-1)/10].getColor() == #FFFFFF){
+        y--; x--; 
+        player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()-1);
+      }
       break;
     case SOUTH|EAST:
-      y++; x++;
-      player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()+1);
+      if(map[y+1/10][(x+1)/10].getColor() == #FFFFFF){
+        y++; x++;
+        player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()+1);
+      }
       break;
     case SOUTH|WEST: 
-      y++; x--;       
-      player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()-1);
+      if(map[y+1/10][(x-1)/10].getColor() == #FFFFFF){
+        y++; x--;       
+        player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()-1);
+      }
       break;
   }
   

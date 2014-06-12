@@ -28,5 +28,39 @@ public abstract class Monster{
     }
 
     public abstract void skill(int n);
-
+    
+    public ArrayList<Cell> findPath(Player target, int XPos, int YPos, ArrayList<Cell> path){
+        if (XPos == target.getXpos()){
+            if (YPos == target.getYpos()){
+                return path;
+            }
+            else if( target.getYpos() > YPos{
+                path.add(map[XPos][YPos]);
+                findPath(target, XPos, YPos++, path);
+            }
+            else{
+                path.add(map[XPos][YPos]);
+                findPath(target, XPos, YPos--, path);
+            }
+        }
+        else if(YPos == target.getYpos){
+            if(XPos < target.getXpos()){
+                path.add(map[Xpos][YPos]);
+                findPath(target, XPos++, YPos, path);
+            }
+            else{
+                path.add(map[XPos][YPos]);
+                findPath(target, Xpos--, Ypos, path);
+            }
+        }
+        else{
+            path.add(map[XPos][YPos]);
+            findPath(target, XPos--, YPos, path);
+            findPath(target, XPos--, YPos, path);
+            findPath(target, XPos--, YPos, path);
+            findPath(target, XPos--, YPos, path);
+            findPath(target, XPos--, YPos, path);
+            findPath(target, XPos--, YPos, path);
+        }
+    }
 }

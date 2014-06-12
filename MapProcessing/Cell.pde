@@ -5,7 +5,7 @@ class Cell{
   color c; //color
 
   // Cell Constructor
-  Cell(float X, float Y, float W, float H, color C) {
+  public Cell(float X, float Y, float W, float H, color C) {
     x = X;
     y = Y;
     w = W;
@@ -13,13 +13,20 @@ class Cell{
     c = C;
   } 
   
-  void display() {
+  public void display() {
     stroke(c);
     fill(c);
     rect(x,y,w,h);
   }
   
-  color getColor(){
+  public void setColor(color C){
+    c = C;   
+  }
+  
+  public color getColor(){
     return c; 
   }
+
+
 }
+

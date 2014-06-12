@@ -1,13 +1,13 @@
 import java.util.*;
 //import cs1.Keyboard;
 public class SkillTree{
-    private final String[] skills = {null, "CS", "Software", "Hardware", 
+    protected final String[] skills = {null, "CS", "Software", "Hardware", 
 				     "Web Developer", "Game Developer",
 				     "Computer", "Robotics", "Anonymous", 
 				     "Hacker", "Digitalize", "Win the Game", 
 				     "Biological Computer", "HAL", "Cyberman",
 				     "Cyborg"};
-    private int[] acquiredSkills = {1,-1,-1,-1};
+    protected int[] acquiredSkills = {1,-1,-1,-1};
 
     public SkillTree(){}
 
@@ -41,7 +41,7 @@ public class SkillTree{
 	    	p.setDamage(p.getDamage() + 15.0);
 	    }
 	    if(acquiredSkills[last + 1] == 7){
-	    	p.getRange(p.getRange()*2);
+	    	p.setRange(p.getRange()*2);
 	    }
 	    if(acquiredSkills[last + 1] == 11){
 	    	return; //rickrolls; change this later
@@ -78,7 +78,7 @@ public class SkillTree{
 
     public static void main(String[]args){
 	SkillTree a = new SkillTree();
-	a.getNewSkill();
+	//a.getNewSkill();
 	a.listSkills();
     }
     

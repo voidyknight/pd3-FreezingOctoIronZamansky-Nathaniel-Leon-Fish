@@ -9,7 +9,7 @@ public class Virus extends Monster{
 	setRange(1);
     }
 
-    public Virus(int i, int x, int y){//used in Map class
+    public Virus(int x, int y){//used in Map class
 	setName("Elk Cloner");
 	setLevel(1);
 	setHealth(100);
@@ -17,7 +17,6 @@ public class Virus extends Monster{
 	setDefense(5);
 	setRange(1);
 
-	setID(i);
 	setXpos(x);
 	setYpos(y);
     }

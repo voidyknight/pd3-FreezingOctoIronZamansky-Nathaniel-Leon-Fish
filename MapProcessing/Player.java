@@ -1,6 +1,5 @@
 public abstract class Player{
     protected String name, phrase;
-    protected Map map;
 
     protected double health, damage, defense, swag, maxHealth, maxSwag; //swag = mana
     protected int XP, level, range, xpos, ypos, swagRegenSpeed, healthRegenSpeed;
@@ -46,7 +45,7 @@ public void setCyborg(boolean n){cyborg = n;}
 public void setMaxHealth(double n){maxHealth = n;}
 public void setMaxSwag(double n){maxSwag = n;}
 
-    public void attack(){
+    /*public void attack(){
 	Monster target = null;
 	for(int x = -1; x < 2; x ++){
 	    for(int y = -1; y < 2; y ++){
@@ -58,7 +57,7 @@ public void setMaxSwag(double n){maxSwag = n;}
 	    }
 	}
 	attack(target);
-    }
+    }*/
 
 
     public void attack(Monster target){

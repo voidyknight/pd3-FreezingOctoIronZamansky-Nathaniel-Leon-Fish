@@ -9,7 +9,7 @@ public class FreezingOctoIronZamansky extends Monster{
 	super.setRange(7);
     }
 
-    public FreezingOctoIronZamansky(int i, int x, int y){
+    public FreezingOctoIronZamansky(int x, int y){
 	super.setName("1337");
 	super.setLevel(2);
 	super.setHealth(200);
@@ -17,7 +17,6 @@ public class FreezingOctoIronZamansky extends Monster{
 	super.setDefense(25);
 	super.setRange(7);
 
-        super.setID(i);
 	super.setXpos(x);
 	super.setYpos(y);
     }

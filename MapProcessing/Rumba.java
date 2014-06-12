@@ -9,7 +9,7 @@ public class Rumba extends Monster{
 	super.setRange(5);
     }
 
-    public Rumba(int i, int x, int y){//used in Map class
+    public Rumba(int x, int y){//used in Map class
 	super.setName("Machine guns");
 	super.setLevel(1);
 	super.setHealth(100);
@@ -17,7 +17,6 @@ public class Rumba extends Monster{
 	super.setDefense(5);
 	super.setRange(5);
 
-	super.setID(i);
 	super.setXpos(x);
 	super.setYpos(y);
     }

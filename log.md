@@ -16,5 +16,8 @@ FISH: oof just finished a ~3 hr coding marathon. Saying that the processing edit
 6/10/14<br>
 FISH: continued processing work
 
+6/11/14<br>
+FISH: in MapProcessing, I created 2 ArrayLists of monsters and the player. When a map is being read in, these arrays are updated. I also did some keyboard input work. The user can now move the player via A,S,W and D, but the procedure is bugged because at the moment the player can walk anywhere, including through walls.
+
 5/29/14 - 6/10/14<br>
 Nathaniel: Teacher classes made, maps made.

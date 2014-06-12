@@ -87,7 +87,7 @@ void draw(){
   
    switch(result) {
     case NORTH:
-      if(!(map[(y+1)/10][x/10].getColor() == #009999)){
+      if(map[(y-1)/10][x/10].getColor() == #FFFFFF){
          y--;
          player.get(0).setYpos(player.get(0).getYpos()+1);
          }
@@ -121,7 +121,7 @@ void draw(){
       player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()-1);
       break;
   }
-  if(!(map[(y+1)/10][x/10].getColor() == #009999)){
+  if(map[(y+1)/10][x/10].getColor() == #FFFFFF){
   map[y/10][x/10].setColor(#FFFFFF);
   fill(#33FF99);
   rect(x, y ,10,10);

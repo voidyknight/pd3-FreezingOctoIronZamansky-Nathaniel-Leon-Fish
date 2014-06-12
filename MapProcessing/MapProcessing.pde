@@ -86,23 +86,33 @@ void draw(){
   }
   
    switch(result) {
+     
     case NORTH:
-      if(map[(y-1)/10][x/10].getColor() == #FFFFFF){
-         y--;
-         player.get(0).setYpos(player.get(0).getYpos()+1);
-         }
-         break;
+     if(map[(y-1)/10][x/10].getColor() == #FFFFFF){
+      y--;
+      player.get(0).setYpos(player.get(0).getYpos()+1);
+     }
+     break;
+     
     case EAST:
-      x++;
-      player.get(0).setXpos(player.get(0).getXpos()+1);
+      if(map[y/10][(x-1)/10].getColor() == #FFFFFF){
+       x++;
+       player.get(0).setXpos(player.get(0).getXpos()+1);
+      }
       break;
+      
     case SOUTH: 
-      y++; 
-      player.get(0).setYpos(player.get(0).getYpos()-1);
+      if(map[(y+1)/10][x/10].getColor() == #FFFFFF){
+       y++; 
+       player.get(0).setYpos(player.get(0).getYpos()-1);
+      }
       break;
+      
     case WEST: 
-      x--;
-      player.get(0).setXpos(player.get(0).getYpos()-1);
+      if(map[y/10][(x+11)/10].getColor() == #FFFFFF){
+       x--;
+       player.get(0).setXpos(player.get(0).getXpos()-1);
+      }
       break;
     case NORTH|EAST: 
       y--; x++; 

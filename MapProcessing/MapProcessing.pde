@@ -86,7 +86,7 @@ void draw(){
   }
   
    switch(result) {
-    case NORTH:
+    case NORTH && !(map[y+1][x].getColor() == #009999):
       y--;
       player.get(0).setYpos(player.get(0).getYpos()+1);
       break;

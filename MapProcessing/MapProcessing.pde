@@ -115,25 +115,25 @@ void draw(){
       }
       break;
     case NORTH|EAST: 
-      if(map[y-1/10][(x+1)/10].getColor() == #FFFFFF){
+      if(map[(y-1)/10][(x+1)/10].getColor() == #FFFFFF){
         y--; x++; 
         player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()+1);
       }
       break;
     case NORTH|WEST:
-      if(map[y-1/10][(x-1)/10].getColor() == #FFFFFF){
+      if(map[(y-1)/10][(x-1)/10].getColor() == #FFFFFF){
         y--; x--; 
         player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()-1);
       }
       break;
     case SOUTH|EAST:
-      if(map[y+1/10][(x+1)/10].getColor() == #FFFFFF){
+      if(map[(y+1)/10][(x+1)/10].getColor() == #FFFFFF){
         y++; x++;
         player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()+1);
       }
       break;
     case SOUTH|WEST: 
-      if(map[y+1/10][(x-1)/10].getColor() == #FFFFFF){
+      if(map[(y+1)/10][(x-1)/10].getColor() == #FFFFFF){
         y++; x--;       
         player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()-1);
       }

@@ -95,7 +95,7 @@ void draw(){
      break;
      
     case EAST:
-      if(map[y/10][(x-1)/10].getColor() == #FFFFFF){
+      if(map[y/10][(x+1)/10].getColor() == #FFFFFF){
         x++;
         player.get(0).setXpos(player.get(0).getXpos()+1);
       }
@@ -109,7 +109,7 @@ void draw(){
       break;
       
     case WEST: 
-      if(map[y/10][(x+1)/10].getColor() == #FFFFFF){
+      if(map[y/10][(x-1)/10].getColor() == #FFFFFF){
         x--;
         player.get(0).setXpos(player.get(0).getXpos()-1);
       }

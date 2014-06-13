@@ -41,9 +41,9 @@ public abstract class Player{
     public void setSwagRegenSpeed(int n){swagRegenSpeed = n;}
     public void setHealthRegenSpeed(int n){healthRegenSpeed = n;}
     public void setHAL(boolean n){HAL = n;}
-public void setCyborg(boolean n){cyborg = n;}
-public void setMaxHealth(double n){maxHealth = n;}
-public void setMaxSwag(double n){maxSwag = n;}
+	public void setCyborg(boolean n){cyborg = n;}
+	public void setMaxHealth(double n){maxHealth = n;}
+	public void setMaxSwag(double n){maxSwag = n;}
 
     /*public void attack(){
 	Monster target = null;

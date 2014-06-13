@@ -19,5 +19,9 @@ FISH: continued processing work
 6/11/14<br>
 FISH: in MapProcessing, I created 2 ArrayLists of monsters and the player. When a map is being read in, these arrays are updated. I also did some keyboard input work. The user can now move the player via A,S,W and D, but the procedure is bugged because at the moment the player can walk anywhere, including through walls.
 
+6/12/14<br>
+FISH: Leon and I fixed the moving through walls bug! :D
+FISH: Technically done on the morning of the 13th, but whatever...started working on the actual gameplay interface.
+
 5/29/14 - 6/10/14<br>
 Nathaniel: Teacher classes made, maps made.

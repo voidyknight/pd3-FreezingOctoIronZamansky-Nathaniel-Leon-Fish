@@ -1,7 +1,11 @@
+import java.util.*;
+import java.lang.*;
+
 public abstract class Monster{
     protected String name;
     protected double health, damage, defense;
     protected int XP, level, range, xpos, ypos;
+    protected ArrayList<Cell> path;
 
     public double getHealth(){return health;}
     public double getDamage(){return damage;}
@@ -29,25 +33,37 @@ public abstract class Monster{
 
     public abstract void skill(int n);
     
-    /*public ArrayList<Cell> findPath(Player target, int xPos, int yPos, ArrayList<Cell> path){
+    /*public void findPath(Player target, int xPos, int yPos){
         if (xPos == target.getXpos()){
             if (yPos == target.getYpos()){
-                return path;
+            path.add(map[xPos][yPos];
             }
             else if( target.getYpos() > yPos{
+                if(map[xPos][yPos].getColor().eqauls(#009999)){
+                    return;
+                }
                 path.add(map[xPos][yPos]);
                 findPath(target, xPos, yPos++, path);
             }
             else{
+                if(map[xPos][yPos].getColor().eqauls(#009999)){
+                    return;
+                }
                 path.add(map[xPos][yPos]);
                 findPath(target, xPos, yPos--, path);
             }
         }
         else if(xPos < target.getXpos()){
+            if(map[xPos][yPos].getColor().eqauls(#009999)){
+                    return;
+            }
             path.add(map[xpos][yPos]);
             findPath(target, xPos++, yPos, path);
         }
         else{
+            if(map[xPos][yPos].getColor().eqauls(#009999)){
+                    return;
+            }
             path.add(map[xPos][yPos]);
             findPath(target, xPos--, yPos, path);
         }

@@ -30,6 +30,16 @@ public abstract class Monster{
 
     public abstract void skill(int n);
     
+    /*   public ArrayList<Cell> findPath(Cell target, Cell[][] map){
+	if(target.getX() == xpos && target.getY() == ypos)
+	    return;
+	PQueue frontier = new PQueue(target);
+	ArrayList<Cell> path = new ArrayList<Cell>();
+	for(
+	*/
+	
+	      //old code
+	
     /*public void findPath(Player target, int xPos, int yPos){
         if (xPos == target.getXpos()){
             if (yPos == target.getYpos()){

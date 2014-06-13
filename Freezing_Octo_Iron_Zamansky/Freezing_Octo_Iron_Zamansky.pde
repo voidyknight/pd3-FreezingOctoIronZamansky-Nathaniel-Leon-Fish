@@ -1,7 +1,9 @@
 Cell[][] map;
+
 int cols = 150;
 int rows = 30;
-int level = 1;
+int level = 0;
+Button button;
 String playertype;//stores type of player Player is
 ArrayList<Monster> monsters = new ArrayList<Monster>();
 ArrayList<Player> player = new ArrayList<Player>();
@@ -29,130 +31,149 @@ void setup(){
 }
 
 void setupMap(int i, String p){
-  String[] lines = loadStrings("Map"+i+".txt");//replace this with any of the 5 map files
-  for (int c = 0; c < 150; c++){//columns
-    for (int r = 0; r < 30; r++){//rows
-      if (lines[r].substring(c,c+1).equals("#")){
-        map[r][c] = new Cell(c*10,r*10,10,10,#009999);
-      }
-      else if (lines[r].substring(c,c+1).equals(" ")){
-        map[r][c] = new Cell(c*10,r*10,10,10,#FFFFFF);
-      }
-      else if (lines[r].substring(c,c+1).equals("p")){
-        map[r][c] = new Cell(c*10,r*10,10,10,#33FF99);
-        if (p.equals("K")){
-          player.add(new K(c, r));}
-        else if (p.equals("Brooks")){
-          player.add(new Brooks(c, r));}
-        else if (p.equals("Brown")){
-          player.add(new Brown(c, r));}
-        else if (p.equals("Zamansky")){
-          player.add(new Zamansky(c, r));}
-      }
-      else if (lines[r].substring(c,c+1).equals("v")){
-        map[r][c] = new Cell(c*10,r*10,10,10,#990099);
-        monsters.add(new Virus(c, r));
-      }
-      else if (lines[r].substring(c,c+1).equals("r")){
-        map[r][c] = new Cell(c*10,r*10,10,10,#4C0099);
-        monsters.add(new Rumba(c, r));
-      }
-      else if (lines[r].substring(c,c+1).equals("z")){
-        map[r][c] = new Cell(c*10,r*10,10,10,#99004C);
-        monsters.add(new FreezingOctoIronZamansky(c, r));
-      }
-      else{
-        map[r][c] = new Cell(c*10,r*10,10,10,#FFFFFF);
+  
+  if (i>0&&i<6){
+    String[] lines = loadStrings("Map"+i+".txt");//replace this with any of the 5 map files
+    for (int c = 0; c < 150; c++){//columns
+      for (int r = 0; r < 30; r++){//rows
+        if (lines[r].substring(c,c+1).equals("#")){
+          map[r][c] = new Cell(c*10,r*10,10,10,#009999);
+        }
+        else if (lines[r].substring(c,c+1).equals(" ")){
+          map[r][c] = new Cell(c*10,r*10,10,10,#FFFFFF);
+        }
+        else if (lines[r].substring(c,c+1).equals("p")){
+          map[r][c] = new Cell(c*10,r*10,10,10,#33FF99);
+          if (p.equals("K")){
+            player.add(new K(c, r));}
+          else if (p.equals("Brooks")){
+            player.add(new Brooks(c, r));}
+          else if (p.equals("Brown")){
+            player.add(new Brown(c, r));}
+          else if (p.equals("Zamansky")){
+            player.add(new Zamansky(c, r));}
+        }
+        else if (lines[r].substring(c,c+1).equals("v")){
+          map[r][c] = new Cell(c*10,r*10,10,10,#990099);
+          monsters.add(new Virus(c, r));
+        }
+        else if (lines[r].substring(c,c+1).equals("r")){
+          map[r][c] = new Cell(c*10,r*10,10,10,#4C0099);
+          monsters.add(new Rumba(c, r));
+        }
+        else if (lines[r].substring(c,c+1).equals("z")){
+          map[r][c] = new Cell(c*10,r*10,10,10,#99004C);
+          monsters.add(new FreezingOctoIronZamansky(c, r));
+        }
+        else{
+          map[r][c] = new Cell(c*10,r*10,10,10,#FFFFFF);
+        }
       }
     }
+    
+    x = player.get(0).getXpos()*10;
+    y = player.get(0).getYpos()*10;
+          
+    //arraylist check
+    /*
+    for(Monster m : monsters){
+      System.out.println(m.getXpos() +", "+ m.getYpos());
+    }
+    for(Player p : player){
+      System.out.println(p.getXpos() +", "+ p.getYpos());
+    }*/
   }
   
-  x = player.get(0).getXpos()*10;
-  y = player.get(0).getYpos()*10;
-        
-  //arraylist check
-  /*
-  for(Monster m : monsters){
-    System.out.println(m.getXpos() +", "+ m.getYpos());
+  else if (i==0){
+    Button b = new Button(0);
+    button = b;
+    
   }
-  for(Player p : player){
-    System.out.println(p.getXpos() +", "+ p.getYpos());
-  }*/
+  
 }
 
 
 void draw(){
 
   background(255);
-   
-  for (int i=0;i<rows;i++){
-    for (int j=0;j<cols;j++){
-      map[i][j].display();
+  
+  if (level>0 && level<6){ 
+      
+    for (int i=0;i<rows;i++){
+      for (int j=0;j<cols;j++){
+        map[i][j].display();
+      }
     }
+    
+    
+     switch(result) {
+       
+      case NORTH:
+       if(map[(y-1)/10][x/10].getColor() == #FFFFFF){
+        y--;
+        player.get(0).setYpos(player.get(0).getYpos()+1);
+       }
+       break;
+       
+      case EAST:
+        if(map[y/10][(x+1)/10].getColor() == #FFFFFF){
+          x++;
+          player.get(0).setXpos(player.get(0).getXpos()+1);
+        }
+        break;
+        
+      case SOUTH: 
+        if(map[(y+1)/10][x/10].getColor() == #FFFFFF){
+          y++; 
+          player.get(0).setYpos(player.get(0).getYpos()-1);
+        }
+        break;
+        
+      case WEST: 
+        if(map[y/10][(x-1)/10].getColor() == #FFFFFF){
+          x--;
+          player.get(0).setXpos(player.get(0).getXpos()-1);
+        }
+        break;
+      case NORTH|EAST: 
+        if(map[(y-1)/10][(x+1)/10].getColor() == #FFFFFF){
+          y--; x++; 
+          player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()+1);
+        }
+        break;
+      case NORTH|WEST:
+        if(map[(y-1)/10][(x-1)/10].getColor() == #FFFFFF){
+          y--; x--; 
+          player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()-1);
+        }
+        break;
+      case SOUTH|EAST:
+        if(map[(y+1)/10][(x+1)/10].getColor() == #FFFFFF){
+          y++; x++;
+          player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()+1);
+        }
+        break;
+      case SOUTH|WEST: 
+        if(map[(y+1)/10][(x-1)/10].getColor() == #FFFFFF){
+          y++; x--;       
+          player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()-1);
+        }
+        break;
+    }
+    
+    map[y/10][x/10].setColor(#FFFFFF);
+    fill(#33FF99);
+    rect(x, y ,10,10);
+    
+    
+    //test
+    //System.out.println(player.get(0).getXpos() +", "+ player.get(0).getYpos());
   }
   
-   switch(result) {
-     
-    case NORTH:
-     if(map[(y-1)/10][x/10].getColor() == #FFFFFF){
-      y--;
-      player.get(0).setYpos(player.get(0).getYpos()+1);
-     }
-     break;
-     
-    case EAST:
-      if(map[y/10][(x+1)/10].getColor() == #FFFFFF){
-        x++;
-        player.get(0).setXpos(player.get(0).getXpos()+1);
-      }
-      break;
-      
-    case SOUTH: 
-      if(map[(y+1)/10][x/10].getColor() == #FFFFFF){
-        y++; 
-        player.get(0).setYpos(player.get(0).getYpos()-1);
-      }
-      break;
-      
-    case WEST: 
-      if(map[y/10][(x-1)/10].getColor() == #FFFFFF){
-        x--;
-        player.get(0).setXpos(player.get(0).getXpos()-1);
-      }
-      break;
-    case NORTH|EAST: 
-      if(map[(y-1)/10][(x+1)/10].getColor() == #FFFFFF){
-        y--; x++; 
-        player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()+1);
-      }
-      break;
-    case NORTH|WEST:
-      if(map[(y-1)/10][(x-1)/10].getColor() == #FFFFFF){
-        y--; x--; 
-        player.get(0).setYpos(player.get(0).getYpos()+1);player.get(0).setXpos(player.get(0).getXpos()-1);
-      }
-      break;
-    case SOUTH|EAST:
-      if(map[(y+1)/10][(x+1)/10].getColor() == #FFFFFF){
-        y++; x++;
-        player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()+1);
-      }
-      break;
-    case SOUTH|WEST: 
-      if(map[(y+1)/10][(x-1)/10].getColor() == #FFFFFF){
-        y++; x--;       
-        player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()-1);
-      }
-      break;
+  else if (level==0){
+    button.drawButton();
+    
   }
-  
-  map[y/10][x/10].setColor(#FFFFFF);
-  fill(#33FF99);
-  rect(x, y ,10,10);
-  
-  
-  //test
-  //System.out.println(player.get(0).getXpos() +", "+ player.get(0).getYpos());
   
 }
 
@@ -181,6 +202,10 @@ void keyReleased(){
     case('s'):case('S'):result ^=SOUTH;break;
     case('a'):case('A'):result ^=WEST;break;
   }
+}
+
+void advanceLevel(){
+ level++; 
 }
 
 

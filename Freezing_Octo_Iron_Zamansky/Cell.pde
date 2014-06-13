@@ -31,9 +31,9 @@ class Cell{
     return x;
   }
 
-public float getY(){
-return y;
-}
+  public float getY(){
+    return y;
+  }
 
 }
 

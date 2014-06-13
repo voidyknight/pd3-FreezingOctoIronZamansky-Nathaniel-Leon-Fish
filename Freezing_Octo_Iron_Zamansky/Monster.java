@@ -43,22 +43,13 @@ public abstract class Monster{
                 findPath(target, xPos, yPos--, path);
             }
         }
-        else if(yPos == target.getYpos){
-            if(xPos < target.getXpos()){
-                path.add(map[xpos][yPos]);
-                findPath(target, xPos++, yPos, path);
-            }
-            else{
-                path.add(map[xPos][yPos]);
-                findPath(target, xpos--, ypos, path);
-            }
+        else if(xPos < target.getXpos()){
+            path.add(map[xpos][yPos]);
+            findPath(target, xPos++, yPos, path);
         }
         else{
             path.add(map[xPos][yPos]);
             findPath(target, xPos--, yPos, path);
-            findPath(target, xPos++, yPos, path);
-            findPath(target, xPos, yPos--, path);
-            findPath(target, xPos, yPos++, path);
         }
     }*/
 }

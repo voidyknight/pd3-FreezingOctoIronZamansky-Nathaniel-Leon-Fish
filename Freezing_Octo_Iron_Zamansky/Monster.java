@@ -39,14 +39,14 @@ public abstract class Monster{
             path.add(map[xPos][yPos];
             }
             else if( target.getYpos() > yPos{
-                if(map[xPos][yPos].getColor().eqauls(#009999)){
+                if(map[xPos][yPos].getColor().eqauls(009999)){
                     return;
                 }
                 path.add(map[xPos][yPos]);
                 findPath(target, xPos, yPos++, path);
             }
             else{
-                if(map[xPos][yPos].getColor().eqauls(#009999)){
+                if(map[xPos][yPos].getColor().eqauls(009999)){
                     return;
                 }
                 path.add(map[xPos][yPos]);
@@ -54,14 +54,14 @@ public abstract class Monster{
             }
         }
         else if(xPos < target.getXpos()){
-            if(map[xPos][yPos].getColor().eqauls(#009999)){
+            if(map[xPos][yPos].getColor().eqauls(009999)){
                     return;
             }
             path.add(map[xpos][yPos]);
             findPath(target, xPos++, yPos, path);
         }
         else{
-            if(map[xPos][yPos].getColor().eqauls(#009999)){
+            if(map[xPos][yPos].getColor().eqauls(009999)){
                     return;
             }
             path.add(map[xPos][yPos]);

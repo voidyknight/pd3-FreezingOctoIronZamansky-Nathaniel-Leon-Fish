@@ -26,7 +26,14 @@ class Cell{
   public color getColor(){
     return c; 
   }
+  
+  public float getX(){
+    return x;
+  }
 
+public float getY(){
+return y;
+}
 
 }
 

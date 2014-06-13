@@ -1,6 +1,7 @@
 Cell[][] map;
 int cols = 150;
 int rows = 30;
+int level = 1;
 String playertype;//stores type of player Player is
 ArrayList<Monster> monsters = new ArrayList<Monster>();
 ArrayList<Player> player = new ArrayList<Player>();
@@ -12,7 +13,7 @@ final static int WEST = 8;
 int result;
 int x,y;
 
-//keyboard input works but is super buggy[can walk anywhere]
+//keyboard input works but is slightly buggy
  
 
 void setup(){
@@ -23,7 +24,12 @@ void setup(){
   map = new Cell[rows][cols];
   playertype = "K";//default value
   
-  String[] lines = loadStrings("Map1.txt");//replace this with any of the 5 map files
+  setupMap(level, playertype);
+  
+}
+
+void setupMap(int i, String p){
+  String[] lines = loadStrings("Map"+i+".txt");//replace this with any of the 5 map files
   for (int c = 0; c < 150; c++){//columns
     for (int r = 0; r < 30; r++){//rows
       if (lines[r].substring(c,c+1).equals("#")){
@@ -34,13 +40,13 @@ void setup(){
       }
       else if (lines[r].substring(c,c+1).equals("p")){
         map[r][c] = new Cell(c*10,r*10,10,10,#33FF99);
-        if (playertype.equals("K")){
+        if (p.equals("K")){
           player.add(new K(c, r));}
-        else if (playertype.equals("Brooks")){
+        else if (p.equals("Brooks")){
           player.add(new Brooks(c, r));}
-        else if (playertype.equals("Brown")){
+        else if (p.equals("Brown")){
           player.add(new Brown(c, r));}
-        else if (playertype.equals("Zamansky")){
+        else if (p.equals("Zamansky")){
           player.add(new Zamansky(c, r));}
       }
       else if (lines[r].substring(c,c+1).equals("v")){

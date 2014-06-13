@@ -29,7 +29,7 @@ public abstract class Monster{
 
     public abstract void skill(int n);
     
-    public ArrayList<Cell> findPath(Player target, int xPos, int yPos, ArrayList<Cell> path){
+    /*public ArrayList<Cell> findPath(Player target, int xPos, int yPos, ArrayList<Cell> path){
         if (xPos == target.getXpos()){
             if (yPos == target.getYpos()){
                 return path;
@@ -60,5 +60,5 @@ public abstract class Monster{
             findPath(target, xPos, yPos--, path);
             findPath(target, xPos, yPos++, path);
         }
-    }
+    }*/
 }

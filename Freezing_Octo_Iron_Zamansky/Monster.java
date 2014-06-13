@@ -1,6 +1,3 @@
-import java.util.*;
-import java.lang.*;
-
 public abstract class Monster{
     protected String name;
     protected double health, damage, defense;

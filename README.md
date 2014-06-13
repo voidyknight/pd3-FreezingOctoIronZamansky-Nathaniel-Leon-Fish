@@ -22,7 +22,7 @@ Maps show up in processing<br><br>
 everything else<br><br>
 
 <h1>V. WHERE TO LOCATE THE COOL STUFF</h1><br><br>
-search algo in Monster<br><br>
+Monster, SkillTree<br><br>
 
 
 <br><br><br><br><br>

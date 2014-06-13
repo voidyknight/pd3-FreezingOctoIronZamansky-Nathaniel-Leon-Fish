@@ -56,11 +56,7 @@ public abstract class Monster{
         else{
             path.add(map[XPos][YPos]);
             findPath(target, XPos--, YPos, path);
-            findPath(target, XPos--, YPos++, path);
-            findPath(target, XPos--, YPos--, path);
             findPath(target, XPos++, YPos, path);
-            findPath(target, XPos++, YPos--, path);
-            findPath(target, XPos++, YPos++, path);
             findPath(target, XPos, YPos--, path);
             findPath(target, XPos, YPos++, path);
         }

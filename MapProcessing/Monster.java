@@ -29,36 +29,36 @@ public abstract class Monster{
 
     public abstract void skill(int n);
     
-    public ArrayList<Cell> findPath(Player target, int XPos, int YPos, ArrayList<Cell> path){
-        if (XPos == target.getXpos()){
-            if (YPos == target.getYpos()){
+    public ArrayList<Cell> findPath(Player target, int xPos, int yPos, ArrayList<Cell> path){
+        if (xPos == target.getXpos()){
+            if (yPos == target.getYpos()){
                 return path;
             }
-            else if( target.getYpos() > YPos{
-                path.add(map[XPos][YPos]);
-                findPath(target, XPos, YPos++, path);
+            else if( target.getYpos() > yPos{
+                path.add(map[xPos][yPos]);
+                findPath(target, xPos, yPos++, path);
             }
             else{
-                path.add(map[XPos][YPos]);
-                findPath(target, XPos, YPos--, path);
+                path.add(map[xPos][yPos]);
+                findPath(target, xPos, yPos--, path);
             }
         }
-        else if(YPos == target.getYpos){
-            if(XPos < target.getXpos()){
-                path.add(map[Xpos][YPos]);
-                findPath(target, XPos++, YPos, path);
+        else if(yPos == target.getYpos){
+            if(xPos < target.getXpos()){
+                path.add(map[xpos][yPos]);
+                findPath(target, xPos++, yPos, path);
             }
             else{
-                path.add(map[XPos][YPos]);
-                findPath(target, Xpos--, Ypos, path);
+                path.add(map[xPos][yPos]);
+                findPath(target, xpos--, ypos, path);
             }
         }
         else{
-            path.add(map[XPos][YPos]);
-            findPath(target, XPos--, YPos, path);
-            findPath(target, XPos++, YPos, path);
-            findPath(target, XPos, YPos--, path);
-            findPath(target, XPos, YPos++, path);
+            path.add(map[xPos][yPos]);
+            findPath(target, xPos--, yPos, path);
+            findPath(target, xPos++, yPos, path);
+            findPath(target, xPos, yPos--, path);
+            findPath(target, xPos, yPos++, path);
         }
     }
 }

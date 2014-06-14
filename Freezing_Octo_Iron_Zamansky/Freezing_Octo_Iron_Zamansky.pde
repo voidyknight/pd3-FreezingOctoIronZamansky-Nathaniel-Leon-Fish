@@ -1,9 +1,16 @@
+import ddf.minim.*;
+
+AudioPlayer audioPlayer;
+Minim minim;//song in background
+
 Cell[][] map;
 
 int cols = 150;
 int rows = 30;
 int level = 0;
-Button button;
+boolean setupyet=false;
+Button topher,mike,peter,sam;
+ArrayList<Button> startbuttons = new ArrayList<Button>();
 String playertype;//stores type of player Player is
 ArrayList<Monster> monsters = new ArrayList<Monster>();
 ArrayList<Player> player = new ArrayList<Player>();
@@ -19,21 +26,43 @@ int x,y;
  
 
 void setup(){
-  size(1500,300);
+  size(1500,300); 
+  fill(#009999);
   frameRate(50);
   result = 0;
   
-  map = new Cell[rows][cols];
-  playertype = "K";//default value
+ 
+  //map = new Cell[rows][cols];
   
-  setupMap(level, playertype);
   
+  background(0);
+  textSize(40);
+  textAlign(CENTER);
+  text("Pick a character to play as", 300, 50);
+  //fill(0);
+  textSize(30);
+  text("Topher", 300, 100);
+  text("Mike", 300, 150);
+  text("Peter", 300, 200);
+  text("Sam", 300, 250);
+  
+  topher = new Button("Brown");
+  startbuttons.add(topher);
+  mike = new Button("Zamansky");
+  startbuttons.add(mike);
+  peter = new Button("Brooks");
+  startbuttons.add(peter);
+  sam = new Button("K");
+  startbuttons.add(sam);
 }
 
-void setupMap(int i, String p){
+void setupMap(String s){//s is player type
   
-  if (i>0&&i<6){
-    String[] lines = loadStrings("Map"+i+".txt");//replace this with any of the 5 map files
+  map = new Cell[rows][cols]; 
+  
+  if (level<6){
+  
+    String[] lines = loadStrings("Map"+level+".txt");//replace this with any of the 5 map files
     for (int c = 0; c < 150; c++){//columns
       for (int r = 0; r < 30; r++){//rows
         if (lines[r].substring(c,c+1).equals("#")){
@@ -44,13 +73,17 @@ void setupMap(int i, String p){
         }
         else if (lines[r].substring(c,c+1).equals("p")){
           map[r][c] = new Cell(c*10,r*10,10,10,#33FF99);
-          if (p.equals("K")){
+          if (s.equals("K")){
+            playertype = "K";
             player.add(new K(c, r));}
-          else if (p.equals("Brooks")){
+          else if (s.equals("Brooks")){
+            playertype = "Brooks";
             player.add(new Brooks(c, r));}
-          else if (p.equals("Brown")){
+          else if (s.equals("Brown")){
+            playertype = "Brown";
             player.add(new Brown(c, r));}
-          else if (p.equals("Zamansky")){
+          else if (s.equals("Zamansky")){
+            playertype = "Zamansky";
             player.add(new Zamansky(c, r));}
         }
         else if (lines[r].substring(c,c+1).equals("v")){
@@ -84,21 +117,25 @@ void setupMap(int i, String p){
     }*/
   }
   
-  else if (i==0){
-    Button b = new Button(0);
-    button = b;
-    
-  }
   
 }
 
 
-void draw(){
-
-  background(255);
+void draw(){ 
   
-  if (level>0 && level<6){ 
+  if (level>0&&level<6){ 
+    
+    background(255);
+    
+    if (setupyet==(false)){
+      minim = new Minim(this);
+      audioPlayer = minim.loadFile("Song.mp3", 2048);
+      audioPlayer.play();
       
+      setupMap(playertype);
+      setupyet=true;
+    }
+    
     for (int i=0;i<rows;i++){
       for (int j=0;j<cols;j++){
         map[i][j].display();
@@ -159,7 +196,7 @@ void draw(){
           player.get(0).setYpos(player.get(0).getYpos()-1);player.get(0).setXpos(player.get(0).getXpos()-1);
         }
         break;
-    }
+     }
     
     map[y/10][x/10].setColor(#FFFFFF);
     fill(#33FF99);
@@ -171,8 +208,12 @@ void draw(){
   }
   
   else if (level==0){
-    button.drawButton();
-    
+    for (Button b : startbuttons){
+      if (b.drawButton()==(true)){
+        playertype = b.getName();
+        level++;
+      }
+    }
   }
   
 }
@@ -202,10 +243,6 @@ void keyReleased(){
     case('s'):case('S'):result ^=SOUTH;break;
     case('a'):case('A'):result ^=WEST;break;
   }
-}
-
-void advanceLevel(){
- level++; 
 }
 
 

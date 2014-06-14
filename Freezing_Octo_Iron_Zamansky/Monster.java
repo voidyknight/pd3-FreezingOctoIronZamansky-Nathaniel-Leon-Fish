@@ -2,7 +2,7 @@ public abstract class Monster{
     protected String name;
     protected double health, damage, defense;
     protected int XP, level, range, xpos, ypos;
-    protected ArrayList<Cell> path;
+    //protected ArrayList<Cell> path;
 
     public double getHealth(){return health;}
     public double getDamage(){return damage;}

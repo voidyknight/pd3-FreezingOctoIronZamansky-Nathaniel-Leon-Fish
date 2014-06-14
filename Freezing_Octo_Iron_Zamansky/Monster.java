@@ -2,6 +2,8 @@ public abstract class Monster{
     protected String name;
     protected double health, damage, defense;
     protected int XP, level, range, xpos, ypos;
+    protected boolean isHacked = false;// true when hacked
+    protected boolean isFrozen = false;//true when frozen
     //protected ArrayList<Cell> path;
 
     public double getHealth(){return health;}

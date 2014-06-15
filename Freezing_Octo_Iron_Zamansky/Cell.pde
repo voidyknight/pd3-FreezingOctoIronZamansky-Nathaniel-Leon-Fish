@@ -13,7 +13,16 @@ public class Cell{
     h = H;
     c = C;
     travelled = false;
-  } 
+  }
+  
+  public Cell(float X, float Y){
+  x = X;
+  y = Y;
+  w = 10;
+  h = 10;
+  c = #FFFFFF
+  travelled = false;
+  };
   
   public void display() {
     stroke(c);

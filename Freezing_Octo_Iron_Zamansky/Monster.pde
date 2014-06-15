@@ -29,6 +29,9 @@ public abstract class Monster{
     public void setTurn(int n){turn = n;}
     
     public void increaseTurn(){turn ++;}
+    public void increaseTurn(int x){turn += x;}
+    public void decreaseTurn(){turn --;}
+    public void decreaseTurn(int x){turn -= x;}
     
     public Cell getNextMove(){
       Cell move = path.get(0);

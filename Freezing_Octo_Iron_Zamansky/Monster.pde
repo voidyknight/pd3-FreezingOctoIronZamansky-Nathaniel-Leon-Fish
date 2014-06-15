@@ -1,7 +1,7 @@
 public abstract class Monster{
     protected String name;
     protected double health, damage, defense;
-    protected int XP, level, range, xpos, ypos;
+    protected int XP, level, range, xpos, ypos, turn;
     protected boolean isHacked = false;// true when hacked
     protected boolean isFrozen = false;//true when frozen
     protected ArrayList<Cell> path;
@@ -15,6 +15,7 @@ public abstract class Monster{
     public int getXpos(){return xpos;}
     public int getYpos(){return ypos;}
     public String getName(){return name;}
+    public int getTurn(){return turn;}
 
     public void setName(String n){name = n;}
     public void setHealth(double n){health = n;}
@@ -25,6 +26,7 @@ public abstract class Monster{
     public void setRange(int n){range = n;}
     public void setXpos(int n){xpos = n;}
     public void setYpos(int n){ypos = n;}
+    public void setTurn(int n){turn = n;}
 
     public double attack(Player target){
         return ((damage * Math.random()) - target.getDefense());
@@ -77,6 +79,7 @@ public abstract class Monster{
 	    c.setTravelled(false);
 	}
 	this.path = path;
+	turn = 4;
    }
 	
    public boolean neighbors(Cell a, Cell b){

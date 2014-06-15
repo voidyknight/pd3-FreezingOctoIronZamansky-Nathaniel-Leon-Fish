@@ -36,28 +36,39 @@ public abstract class Monster{
 	ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
 	for(int x = -1; x < 2; x ++){
 		for(int y = -1; y < 2; y ++){
-			if(map[x + c.getX()][y + c.getY()].getColor() == #FFFFFF)
-			  neighbors.add(map[x + getX()][y + getY()]);
+			if(map[x + (int)c.getX()][y + (int)c.getY()].getColor() == #FFFFFF)
+			  neighbors.add(map[x + (int)c.getX()][y + (int)c.getY()]);
 		}
 	}
 	return neighbors;
+    }
+    
+  public ArrayList<Cell> getViableNeigh(Cell[][] map){
+  ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
+  for(int x = -1; x < 2; x ++){
+    for(int y = -1; y < 2; y ++){
+      if(map[x + (int)xpos][y + (int)ypos].getColor() == #FFFFFF)
+        neighbors.add(map[x + xpos][y + ypos]);
+    }
+  }
+  return neighbors;
     }
 	
     
     public ArrayList<Cell> findPath(Cell target, Cell[][] map){
 	if(target.getX() == xpos && target.getY() == ypos)
-	    return;
+	    return null;
 	PQueue frontier = new PQueue(target);
 	ArrayList<Cell> neigh = getViableNeigh(map);
 	ArrayList<Cell> path = new ArrayList<Cell>();
 	for(Cell c : neigh){
 	  if(!c.getTravelled())
-	     frontier.add(c);
+	     frontier.insert(c);
 	}
 	path.add(frontier.peek());
 	frontier.peek().setTravelled(true);
 	if(frontier.peek() == target) return path;
-	path = findPathFunctional(target, map, frontier.get(), frontier, path);
+	path = findPathF(target, map, frontier.get(), frontier, path);
 	for(Cell[] a: map){
 	  for (Cell c : a)
 	    c.setTravelled(false);
@@ -74,10 +85,10 @@ public abstract class Monster{
    }
    
    
-   public ArrayList<Cell> findPathFunctional(Cell target, Cell[][] map, Cell current, PQueue frontier, path){
+   public ArrayList<Cell> findPathF(Cell target, Cell[][] map, Cell current, PQueue frontier, ArrayList<Cell> path){
        for(Cell c : getViableNeigh(map)){
          if(!c.getTravelled())
-           frontier.add(c);
+           frontier.insert(c);
        }
        while(path.size() > 0 && !neighbors(frontier.peek(), path.get(path.size() - 1))){
          frontier.get();
@@ -86,7 +97,7 @@ public abstract class Monster{
        path.add(frontier.peek());
        frontier.peek().setTravelled(true);
        if(frontier.peek() == target) return path;
-       path = findPathFuncational(target, map, frontier.get(), frontier, path);
+       path = findPathF(target, map, frontier.get(), frontier, path);
        return path;
        }
        

@@ -37,11 +37,11 @@ public class Cell{
     return y;
   }
   
-  public getTravelled(){
+  public boolean getTravelled(){
     return travelled;
   }
   
-  public setTravelled(boolean x){
+  public void setTravelled(boolean x){
     travelled = x;
   }
 

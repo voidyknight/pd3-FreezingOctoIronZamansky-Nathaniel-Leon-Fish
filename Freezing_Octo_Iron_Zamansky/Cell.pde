@@ -1,4 +1,4 @@
-class Cell{
+public class Cell{
   // A cell object knows about its location in the grid as well as its size with the variables x,y,w,h.
   float x,y;   // x,y location
   float w,h;   // width and height

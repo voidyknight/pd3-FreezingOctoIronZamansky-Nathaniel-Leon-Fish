@@ -31,14 +31,18 @@ public abstract class Monster{
     }
 
     public abstract void skill(int n);
-    
-    /*   public ArrayList<Cell> findPath(Cell target, Cell[][] map){
+
+    /*public ArrayList<Cell> getViableNeighbors(Cell[][] map){
+	ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
+	for(int x = -1; 
+    */
+   /* public ArrayList<Cell> findPath(Cell target, Cell[][] map){
 	if(target.getX() == xpos && target.getY() == ypos)
 	    return;
 	PQueue frontier = new PQueue(target);
 	ArrayList<Cell> path = new ArrayList<Cell>();
-	for(
-	*/
+	
+	*/    
 	
 	      //old code
 	

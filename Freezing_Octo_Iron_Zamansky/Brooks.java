@@ -1,5 +1,4 @@
 public class Brooks extends Player{
-
   public Brooks(){
     setSwag(100.0);
     setHealth(150.0);

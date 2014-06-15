@@ -5,7 +5,7 @@ public abstract class Monster{
     protected boolean isHacked = false;// true when hacked
     protected boolean isFrozen = false;//true when frozen
     protected ArrayList<Cell> path;
-    protected String type;
+    protected Char type;
 
     public double getHealth(){return health;}
     public double getDamage(){return damage;}
@@ -17,7 +17,7 @@ public abstract class Monster{
     public int getYpos(){return ypos;}
     public String getName(){return name;}
     public int getTurn(){return turn;}
-    public int getType(){return type;}
+    public Char getType(){return type;}
 
     public void setName(String n){name = n;}
     public void setHealth(double n){health = n;}
@@ -29,7 +29,7 @@ public abstract class Monster{
     public void setXpos(int n){xpos = n;}
     public void setYpos(int n){ypos = n;}
     public void setTurn(int n){turn = n;}
-    public void setType(String s){type = s;}
+    public void setType(Char s){type = s;}
     
     public void increaseTurn(){turn ++;}
     public void increaseTurn(int x){turn += x;}

@@ -32,12 +32,12 @@ public abstract class Monster{
 
     public abstract void skill(int n);
 
-    public ArrayList<Cell> getViableNeighbors(Cell[][] map){
+    public ArrayList<Cell> getViableNeigh(Cell[][] map, Cell c){
 	ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
 	for(int x = -1; x < 2; x ++){
 		for(int y = -1; y < 2; y ++){
-			if(map[x][y].getColor() == #FFFFFF)
-			  neighbors.add(map[x][y]);
+			if(map[x + c.getX()][y + c.getY()].getColor() == #FFFFFF)
+			  neighbors.add(map[x + getX()][y + getY()]);
 		}
 	}
 	return neighbors;
@@ -48,7 +48,50 @@ public abstract class Monster{
 	if(target.getX() == xpos && target.getY() == ypos)
 	    return;
 	PQueue frontier = new PQueue(target);
+	ArrayList<Cell> neigh = getViableNeigh(map);
 	ArrayList<Cell> path = new ArrayList<Cell>();
+	for(Cell c : neigh){
+	  if(!c.getTravelled())
+	     frontier.add(c);
+	}
+	path.add(frontier.peek());
+	frontier.peek().setTravelled(true);
+	if(frontier.peek() == target) return path;
+	path = findPathFunctional(target, map, frontier.get(), frontier, path);
+	for(Cell[] a: map){
+	  for (Cell c : a)
+	    c.setTravelled(false);
+	}
+	return path;
+   }
+	
+   public boolean neighbors(Cell a, Cell b){
+     if(Math.abs(Math.abs(a.getX()) - Math.abs(b.getX())) > 1)
+       return false;
+     if(Math.abs(Math.abs(a.getX()) - Math.abs(b.getX())) > 1)
+       return false;
+     return true;
+   }
+   
+   
+   public ArrayList<Cell> findPathFunctional(Cell target, Cell[][] map, Cell current, PQueue frontier, path){
+       for(Cell c : getViableNeigh(map)){
+         if(!c.getTravelled())
+           frontier.add(c);
+       }
+       while(path.size() > 0 && !neighbors(frontier.peek(), path.get(path.size() - 1))){
+         frontier.get();
+         path.remove(path.size() - 1);
+       }
+       path.add(frontier.peek());
+       frontier.peek().setTravelled(true);
+       if(frontier.peek() == target) return path;
+       path = findPathFuncational(target, map, frontier.get(), frontier, path);
+       return path;
+       }
+       
+       
+	
 	
 	*/
 	    

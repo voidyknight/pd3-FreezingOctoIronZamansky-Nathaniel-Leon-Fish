@@ -3,6 +3,7 @@ public class Cell{
   float x,y;   // x,y location
   float w,h;   // width and height
   color c; //color
+  boolean travelled;
 
   // Cell Constructor
   public Cell(float X, float Y, float W, float H, color C) {
@@ -11,6 +12,7 @@ public class Cell{
     w = W;
     h = H;
     c = C;
+    travelled = false;
   } 
   
   public void display() {
@@ -33,6 +35,14 @@ public class Cell{
 
   public float getY(){
     return y;
+  }
+  
+  public getTravelled(){
+    return travelled;
+  }
+  
+  public setTravelled(boolean x){
+    travelled = x;
   }
 
 }

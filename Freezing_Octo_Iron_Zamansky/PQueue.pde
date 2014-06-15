@@ -13,9 +13,15 @@ public class PQueue{
   }
   
   public void insert(Cell a){
+    if(queue.size() == 0){
+      queue.add(a);
+      return;
+    }
     for(int x = 0; x < queue.size(); x ++){
-       if(compare(a, queue.get(x)) <= 0.0)
+       if(compare(a, queue.get(x)) <= 0.0){
          queue.add(x, a);
+         return;
+       }
       if(x == queue.size() - 1)
          queue.add(a);
     }
@@ -37,7 +43,7 @@ public class PQueue{
   
 
   public Cell peek(){
-    if(queue.size() != 0) return queue.get(0);
+    if(queue.size() > 0) return queue.get(0);
     return null;
   }
 

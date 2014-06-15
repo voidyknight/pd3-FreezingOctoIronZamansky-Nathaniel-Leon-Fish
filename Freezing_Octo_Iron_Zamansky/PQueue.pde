@@ -34,5 +34,8 @@ public class PQueue{
   public boolean hasCell(Cell a){
      return queue.contains(a);
   }
+  
+  public Cell peek(){if(queue.size() != 0) return queue.get(0);}
+  
 
 }

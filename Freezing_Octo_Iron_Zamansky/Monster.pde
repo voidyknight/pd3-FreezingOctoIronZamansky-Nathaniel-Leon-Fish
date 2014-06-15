@@ -27,6 +27,12 @@ public abstract class Monster{
     public void setXpos(int n){xpos = n;}
     public void setYpos(int n){ypos = n;}
     public void setTurn(int n){turn = n;}
+    
+    public Cell getNextMove(){
+      Cell move = path.get(0);
+      path.remove(0);
+      return move;
+    }
 
     public double attack(Player target){
         return ((damage * Math.random()) - target.getDefense());

@@ -5,7 +5,7 @@ public abstract class Monster{
     protected boolean isHacked = false;// true when hacked
     protected boolean isFrozen = false;//true when frozen
     protected ArrayList<Cell> path;
-    protected Char type;
+    protected char type;
 
     public double getHealth(){return health;}
     public double getDamage(){return damage;}
@@ -17,7 +17,7 @@ public abstract class Monster{
     public int getYpos(){return ypos;}
     public String getName(){return name;}
     public int getTurn(){return turn;}
-    public Char getType(){return type;}
+    public char getType(){return type;}
 
     public void setName(String n){name = n;}
     public void setHealth(double n){health = n;}
@@ -29,7 +29,7 @@ public abstract class Monster{
     public void setXpos(int n){xpos = n;}
     public void setYpos(int n){ypos = n;}
     public void setTurn(int n){turn = n;}
-    public void setType(Char s){type = s;}
+    public void setType(char s){type = s;}
     
     public void increaseTurn(){turn ++;}
     public void increaseTurn(int x){turn += x;}
@@ -61,10 +61,14 @@ public abstract class Monster{
         
       public ArrayList<Cell> getViableNeigh(Cell[][] map){
         ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
+        System.out.println("" + map.length + " " + map[0].length);
+        System.out.println(xpos/10 + " " + ypos/10);
         for(int x = -1; x < 2; x ++){
           for(int y = -1; y < 2; y ++){
-            if(map[x + (int)xpos][y + (int)ypos].getColor() == #FFFFFF)
-              neighbors.add(map[x + xpos][y + ypos]);
+            if(x + (int)xpos < map.length && y + (int)ypos < map[0].length && x + (int)xpos > -1 && y + (int)ypos > -1){
+              if(map[x + (int)(xpos)][y + (int)(ypos)].getColor() == #FFFFFF)
+                neighbors.add(map[x + (int)(xpos)][y + (int)(ypos)]);
+            }
           }
         }
         return neighbors;
@@ -76,7 +80,7 @@ public abstract class Monster{
     
       public void findPath(Cell target, Cell[][] map){
 	if(target.getX() == xpos && target.getY() == ypos)
-	    return null;
+	    return;
 	PQueue frontier = new PQueue(target);
 	ArrayList<Cell> neigh = getViableNeigh(map);
 	ArrayList<Cell> path = new ArrayList<Cell>();
@@ -86,7 +90,10 @@ public abstract class Monster{
 	}
 	path.add(frontier.peek());
 	frontier.peek().setTravelled(true);
-	if(frontier.peek() == target) return path;
+	if(frontier.peek() == target){
+          this.path = path;
+          return;
+        }
 	path = findPathF(target, map, frontier.get(), frontier, path);
 	for(Cell[] a: map){
 	  for (Cell c : a)

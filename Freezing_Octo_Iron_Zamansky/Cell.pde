@@ -20,7 +20,7 @@ public class Cell{
   y = Y;
   w = 10;
   h = 10;
-  c = #FFFFFF
+  c = #FFFFFF;
   travelled = false;
   };
   

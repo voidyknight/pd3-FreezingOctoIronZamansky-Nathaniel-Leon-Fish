@@ -58,7 +58,7 @@ public abstract class Monster{
 
 	
     
-      public ArrayList<Cell> findPath(Cell target, Cell[][] map){
+      public void findPath(Cell target, Cell[][] map){
 	if(target.getX() == xpos && target.getY() == ypos)
 	    return null;
 	PQueue frontier = new PQueue(target);
@@ -76,7 +76,7 @@ public abstract class Monster{
 	  for (Cell c : a)
 	    c.setTravelled(false);
 	}
-	return path;
+	this.path = path;
    }
 	
    public boolean neighbors(Cell a, Cell b){

@@ -37,13 +37,13 @@ public class Cell{
     return y;
   }
   
-  public getTravelled(){
+ /* public getTravelled(){
     return travelled;
-  }
+  }*/
   
-  public setTravelled(boolean x){
+  /*public setTravelled(boolean x){
     travelled = x;
-  }
+  }*/
 
 }
 

@@ -32,7 +32,7 @@ public abstract class Monster{
 
     public abstract void skill(int n);
 
-    public ArrayList<Cell> getViableNeigh(Cell[][] map, Cell c){
+   /* public ArrayList<Cell> getViableNeigh(Cell[][] map, Cell c){
 	ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
 	for(int x = -1; x < 2; x ++){
 		for(int y = -1; y < 2; y ++){
@@ -41,7 +41,7 @@ public abstract class Monster{
 		}
 	}
 	return neighbors;
-    }
+    }*/
 	
     
     /*public ArrayList<Cell> findPath(Cell target, Cell[][] map){

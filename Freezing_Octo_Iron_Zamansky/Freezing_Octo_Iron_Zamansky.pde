@@ -127,12 +127,6 @@ void setupMap(String s){//s is player type
 void draw(){ 
   
   if (level>0&&level<6){ 
-    
-    if (paused==true){
-      for (int j=0;j<cols;j++){
-        map[0][j].setColor(#FFFFFF);
-      }
-    }
   
     background(255);
     
@@ -209,8 +203,8 @@ void draw(){
         paused = true;
         audioPlayer.pause();
         for (int j=0;j<cols;j++){
-          map[0][j].setColor(#FFFFFF);
-          map[29][j].setColor(#FFFFFF);
+          map[0][j].setColor(#00FFFF);
+          map[29][j].setColor(#00FFFF);
         }
         break;
       case RESUME:

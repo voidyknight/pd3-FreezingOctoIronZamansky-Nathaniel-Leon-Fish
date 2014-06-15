@@ -221,7 +221,21 @@ void draw(){
      fill(#33FF99);
      rect(x, y ,10,10);
 
-    
+     //monster movement
+     for(Monster m : monsters){
+        if(m.getTurn() < 1)
+          m.findPath(new Cell(player.get(0).getX(), player.get(0).getY()));
+        Cell nextMove = m.getNextMove();
+        map[m.getXpos()][m.getYpos()].setColor(#FFFFFF);
+        m.setXpos((int)nextMove.getX()); m.setYpos((int)nextMove.getY());
+        if(m.getType() == 'r')
+          map[m.getXpos()][m.getYpos()].setColor(#4C0099);
+        else if(m.getType() == 'v')
+          map[m.getXpos()][m.getYpos].setColor(#990099);
+        else if(m.getType() == 'z')
+          map[m.getXpos()][m.getYpos].setColor(#99004C);
+        m.increaseTurn();
+    }
     
     //test
     //System.out.println(player.get(0).getXpos() +", "+ player.get(0).getYpos());

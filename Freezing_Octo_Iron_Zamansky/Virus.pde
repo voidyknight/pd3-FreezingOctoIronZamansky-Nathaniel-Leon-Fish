@@ -7,6 +7,7 @@ public class Virus extends Monster{
 	setDamage(5);
 	setDefense(5);
 	setRange(1);
+	setType('v');
     }
 
     public Virus(int x, int y){//used in Map class
@@ -16,9 +17,9 @@ public class Virus extends Monster{
 	setDamage(5);
 	setDefense(5);
 	setRange(1);
-
 	setXpos(x);
 	setYpos(y);
+	setType('v');
     }
 
     public void skill(int n){}

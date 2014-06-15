@@ -30,5 +30,9 @@ public class PQueue{
    queue.remove(0);
    return a;
   }
+  
+  public boolean hasCell(Cell a){
+     return queue.contains(a);
+  }
 
 }

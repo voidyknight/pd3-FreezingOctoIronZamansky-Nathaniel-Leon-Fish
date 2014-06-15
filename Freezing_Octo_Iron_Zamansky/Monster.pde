@@ -4,7 +4,7 @@ public abstract class Monster{
     protected int XP, level, range, xpos, ypos;
     protected boolean isHacked = false;// true when hacked
     protected boolean isFrozen = false;//true when frozen
-    //protected ArrayList<Cell> path;
+    protected ArrayList<Cell> path;
 
     public double getHealth(){return health;}
     public double getDamage(){return damage;}
@@ -32,17 +32,26 @@ public abstract class Monster{
 
     public abstract void skill(int n);
 
-    /*public ArrayList<Cell> getViableNeighbors(Cell[][] map){
+    public ArrayList<Cell> getViableNeighbors(Cell[][] map){
 	ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
-	for(int x = -1; 
-    */
-   /* public ArrayList<Cell> findPath(Cell target, Cell[][] map){
+	for(int x = -1; x < 2; x ++){
+		for(int y = -1; y < 2; y ++){
+			if(map[x][y].getColor() == #FFFFFF)
+			  neighbors.add(map[x][y]);
+		}
+	}
+	return neighbors;
+    }
+	
+    
+    public ArrayList<Cell> findPath(Cell target, Cell[][] map){
 	if(target.getX() == xpos && target.getY() == ypos)
 	    return;
 	PQueue frontier = new PQueue(target);
 	ArrayList<Cell> path = new ArrayList<Cell>();
 	
-	*/    
+	
+	    
 	
 	      //old code
 	

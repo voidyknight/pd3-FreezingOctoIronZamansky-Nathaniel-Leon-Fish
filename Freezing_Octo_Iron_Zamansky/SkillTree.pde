@@ -76,12 +76,11 @@ public class SkillTree{
 	System.out.println(a);
     }
 
-    public static void main(String[]args){
+    /*public static void main(String[]args){
 	SkillTree a = new SkillTree();
 	//a.getNewSkill();
 	a.listSkills();
-    }
-    
+    }*/
     
     
 }

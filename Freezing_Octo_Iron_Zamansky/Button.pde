@@ -28,7 +28,6 @@ class Button{
   }
   
   boolean drawButton(){
-   //println(pressed);
    rect(xpos,ypos,w,h);
    fill(255);
    if(mousePressed){

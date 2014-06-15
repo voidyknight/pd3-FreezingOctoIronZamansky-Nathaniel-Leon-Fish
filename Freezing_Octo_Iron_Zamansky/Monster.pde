@@ -44,13 +44,13 @@ public abstract class Monster{
     }
 	
     
-    public ArrayList<Cell> findPath(Cell target, Cell[][] map){
+    /*public ArrayList<Cell> findPath(Cell target, Cell[][] map){
 	if(target.getX() == xpos && target.getY() == ypos)
 	    return;
 	PQueue frontier = new PQueue(target);
 	ArrayList<Cell> path = new ArrayList<Cell>();
 	
-	
+	*/
 	    
 	
 	      //old code

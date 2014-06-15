@@ -28,6 +28,8 @@ public abstract class Monster{
     public void setYpos(int n){ypos = n;}
     public void setTurn(int n){turn = n;}
     
+    public void increaseTurn(){turn ++;}
+    
     public Cell getNextMove(){
       Cell move = path.get(0);
       path.remove(0);

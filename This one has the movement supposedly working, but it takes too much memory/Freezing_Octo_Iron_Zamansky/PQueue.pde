@@ -18,8 +18,10 @@ public class PQueue{
       return;
     }
     for(int x = 0; x < queue.size(); x ++){
-       if(compare(a, queue.get(x)) <= 0.0)
+       if(compare(a, queue.get(x)) <= 0.0){
          queue.add(x, a);
+         return;
+       }
       if(x == queue.size() - 1)
          queue.add(a);
     }

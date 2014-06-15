@@ -215,20 +215,34 @@ void draw(){
      rect(x, y ,10,10);
      
      //monster movement
-     for(Monster m : monsters){
-        if(m.getTurn() < 1)
-          m.findPath(new Cell(player.get(0).getXpos(), player.get(0).getYpos()), map);
+    for(Monster m : monsters){
         Cell nextMove = m.getNextMove();
-        map[m.getXpos()][m.getYpos()].setColor(#FFFFFF);
+        if(nextMove == null){
+          
+          System.out.println(m.getXpos());
+          
+          
+          m.findPath(map[y/10][x/10], map);
+          nextMove = m.getNextMove();
+        }
+        map[m.getYpos()/10][m.getXpos()/10].setColor(#FFFFFF);
+        
+        
+        
         m.setXpos((int)nextMove.getX()); m.setYpos((int)nextMove.getY());
-        if(m.getType() == 'r')
-          map[m.getXpos()][m.getYpos()].setColor(#4C0099);
-        else if(m.getType() == 'v')
-          map[m.getXpos()][m.getYpos()].setColor(#990099);
-        else if(m.getType() == 'z')
-          map[m.getXpos()][m.getYpos()].setColor(#99004C);
+  
+        if(m.getType() == 'r'){
+          map[m.getYpos()/10][m.getXpos()/10].setColor(#4C0099);
+        }
+        else if(m.getType() == 'v'){
+          map[m.getYpos()/10][m.getXpos()/10].setColor(#990099);
+        }
+        else if(m.getType() == 'z'){
+          map[m.getYpos()/10][m.getXpos()/10].setColor(#99004C);
+        }
         m.increaseTurn();
     }
+    
     
     //test
     //System.out.println(player.get(0).getXpos() +", "+ player.get(0).getYpos());

@@ -32,30 +32,33 @@ public abstract class Monster{
 
     public abstract void skill(int n);
 
-    public ArrayList<Cell> getViableNeigh(Cell[][] map, Cell c){
-	ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
-	for(int x = -1; x < 2; x ++){
-		for(int y = -1; y < 2; y ++){
-			if(map[x + (int)c.getX()][y + (int)c.getY()].getColor() == #FFFFFF)
-			  neighbors.add(map[x + (int)c.getX()][y + (int)c.getY()]);
-		}
-	}
-	return neighbors;
-    }
+      public ArrayList<Cell> getViableNeigh(Cell[][] map, Cell c){
+  	  ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
+  	  for(int x = -1; x < 2; x ++){
+             for(int y = -1; y < 2; y ++){
+  	        if(map[x + (int)c.getX()][y + (int)c.getY()].getColor() == #FFFFFF)
+                   neighbors.add(map[x + (int)c.getX()][y + (int)c.getY()]);
+  	      }
+  	  }
+    	  return neighbors; 
+        }
+        
+      public ArrayList<Cell> getViableNeigh(Cell[][] map){
+        ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
+        for(int x = -1; x < 2; x ++){
+          for(int y = -1; y < 2; y ++){
+            if(map[x + (int)xpos][y + (int)ypos].getColor() == #FFFFFF)
+              neighbors.add(map[x + xpos][y + ypos]);
+          }
+        }
+        return neighbors;
+      }
     
-  public ArrayList<Cell> getViableNeigh(Cell[][] map){
-  ArrayList<Cell> neighbors = new ArrayList<Cell>(8);
-  for(int x = -1; x < 2; x ++){
-    for(int y = -1; y < 2; y ++){
-      if(map[x + (int)xpos][y + (int)ypos].getColor() == #FFFFFF)
-        neighbors.add(map[x + xpos][y + ypos]);
-    }
-  }
-  return neighbors;
-    }
+
+
 	
     
-    public ArrayList<Cell> findPath(Cell target, Cell[][] map){
+      public ArrayList<Cell> findPath(Cell target, Cell[][] map){
 	if(target.getX() == xpos && target.getY() == ypos)
 	    return null;
 	PQueue frontier = new PQueue(target);

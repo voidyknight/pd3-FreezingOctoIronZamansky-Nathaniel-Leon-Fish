@@ -76,7 +76,6 @@ public class SkillTree{
 	System.out.println(a);
     }
 
-    
-    
+
     
 }

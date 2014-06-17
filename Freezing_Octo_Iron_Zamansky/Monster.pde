@@ -39,6 +39,13 @@ public abstract class Monster{
     public void decreaseTurn(){turn --;}
     public void decreaseTurn(int x){turn -= x;}
     
+    
+    public void help(){
+      System.out.println("start");
+      for(Cell c:path)
+      System.out.println(c.getX() + " " + c.getY());
+      System.out.println("end");
+    }
     public Cell getNextMove(){
       if(path.size() <1)
       return null;
@@ -52,10 +59,15 @@ public abstract class Monster{
     }
 
     public abstract void skill(int n);
-    
+    int thin = 0;
     public void findPath(Cell target, Cell[][] map){
      if(target.getX() == xpos && target.getY() == ypos)
       return;
+     
+     //while(xpos )
+    //  xpos/=10;
+    // while(ypos >= 1500)
+    //   ypos/=10;
      map = findPathF(target, map, new Cell(xpos*10, ypos*10));
     int y = ypos; int x = xpos;
      
@@ -77,15 +89,13 @@ public abstract class Monster{
      }
         */ 
          
-         
-     int count = 0;
+  int count = 0;
      while(map[y][x] != target && count < 10){
        if(map[y+1][x].getTravelled()){
          path.add(map[y+1][x]);
          y++;
        }
        else if(map[y-1][x].getTravelled()){
-         path.add(map[y-1][x]);
          y--;
        }
        else if(map[y][x+1].getTravelled()){
@@ -112,9 +122,11 @@ public abstract class Monster{
          map2[i][j]=map[i][j];
          
          
-     System.out.println(current.getY() + " " + current.getX() + " " + map.length);
+     //System.out.println(current.getY() + " " + current.getX() + " " + map.length);
      
-     
+    // System.out.println(map.length + " " + map[0].length + " " +current.getY());
+    
+    
      if(map[(int)current.getY()/10-1][(int)current.getX()/10].getColor() != #009999 && !map[(int)current.getY()/10-1][(int)current.getX()/10].getTravelled()){
        current.setTravelled(true);
        map2 = findPathF(target, map, map[(int)current.getY()/10-1][(int)current.getX()/10]);
@@ -134,6 +146,9 @@ public abstract class Monster{
        current.setTravelled(true);
        map2 = findPathF(target, map, map[(int)current.getY()/10][(int)current.getX()/10+1]);
      }
+     
+     System.out.println(current.getX() + " " + current.getY());
+     solved = false;
      return map2;
     }
 

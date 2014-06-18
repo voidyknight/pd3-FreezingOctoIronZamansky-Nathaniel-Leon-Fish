@@ -15,7 +15,10 @@ ArrayList<Button> startbuttons = new ArrayList<Button>();
 String playertype;//stores type of player Player is
 ArrayList<Monster> monsters = new ArrayList<Monster>();
 ArrayList<Player> player = new ArrayList<Player>();
+Player p1;
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+long time = 0;
+long timeElapsed = 0;
 
 final static int NORTH = 1;
 final static int EAST = 2;
@@ -121,6 +124,7 @@ void setupMap(String s){//s is player type
 
 
 void draw(){ 
+
   
   if (monsters.isEmpty() && setupyet){
     level++;
@@ -153,7 +157,15 @@ void draw(){
       }
     }
   
-        
+          p1 = player.get(0);
+  time = System.currentTimeMillis();
+  timeElapsed += System.currentTimeMillis();
+  if(timeElapsed - time >= 3000){
+    p1.setHealth(p1.getHealth() + p1.getHealthRegenSpeed());
+    p1.setSwag(p1.getSwag() + p1.getSwagRegenSpeed());
+    time = System.currentTimeMillis();
+    timeElapsed = System.currentTimeMillis();
+  }
     
      switch(result) {
       

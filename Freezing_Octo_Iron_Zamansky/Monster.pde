@@ -147,7 +147,11 @@ public abstract class Monster{
        map2 = findPathF(target, map, map[(int)current.getY()/10][(int)current.getX()/10+1]);
      }
      
+<<<<<<< HEAD
    //  System.out.println(current.getX() + " " + current.getY());
+=======
+     //System.out.println(current.getX() + " " + current.getY());
+>>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
      solved = false;
      return map2;
     }

@@ -15,6 +15,7 @@ ArrayList<Button> startbuttons = new ArrayList<Button>();
 String playertype;//stores type of player Player is
 ArrayList<Monster> monsters = new ArrayList<Monster>();
 ArrayList<Player> player = new ArrayList<Player>();
+ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 final static int NORTH = 1;
 final static int EAST = 2;
@@ -22,17 +23,20 @@ final static int SOUTH = 4;
 final static int WEST = 8;
 final static int PAUSE = 999;
 final static int RESUME = -999;
+<<<<<<< HEAD
 final static int ATTACK = 998;
+=======
+final static int ATTACK = 9999;
+>>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
 int result;
 int x,y;
 
-//keyboard input works but is slightly buggy
  
 
 void setup(){
   size(1500,300); 
   fill(#009999);
-  frameRate(50);
+  frameRate(30);
   result = 0;
   
  
@@ -119,6 +123,11 @@ void setupMap(String s){//s is player type
 
 
 void draw(){ 
+  
+  if (monsters.isEmpty() && setupyet){
+    level++;
+    setupMap(playertype);//creating a new player though...
+  }
   
   if (level>0&&level<6){ 
   
@@ -225,6 +234,14 @@ void draw(){
           map[0][j].setColor(#009999);
           map[29][j].setColor(#009999);
         }
+<<<<<<< HEAD
+=======
+        break;
+      case ATTACK:
+        map[y/10][(x/10)+1].setColor(#CC0000);
+        bullets.add(new Bullet((x/10)+1,y/10));
+        break;
+>>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
      }
     
      map[y/10][x/10].setColor(#FFFFFF);
@@ -234,6 +251,10 @@ void draw(){
      //monster movement
 int count;
     for(Monster m : monsters){
+<<<<<<< HEAD
+=======
+      if (paused!=true){
+>>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
       //System.out.println("here1 " +m.getXpos() + " " +m.getYpos() );
         Cell nextMove = m.getNextMove();
         count = 0;
@@ -248,7 +269,8 @@ int count;
         if(count != 19){
         map[m.getYpos()][m.getXpos()].setColor(#FFFFFF);
         
-        m.setXpos((int)nextMove.getX()/10); m.setYpos((int)nextMove.getY()/10);
+        m.setXpos((int)nextMove.getX()/10);
+        m.setYpos((int)nextMove.getY()/10);
   
         if(m.getType() == 'r'){
           map[m.getYpos()][m.getXpos()].setColor(#4C0099);
@@ -259,13 +281,27 @@ int count;
         else if(m.getType() == 'z'){
           map[m.getYpos()][m.getXpos()].setColor(#99004C);
         }
+<<<<<<< HEAD
         }
         count = 0;
     
    //  System.out.println("here2 " +m.getXpos() + " " +m.getYpos() );
 
   }
+=======
+        //System.out.println("here2 " +m.getXpos() + " " +m.getYpos() );
+      }
+    }
+>>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
     
+    for (Bullet bl : bullets){
+        bl.setXpos((int)(bl.getXpos())+1);
+        bl.setYpos((int)(bl.getYpos()));
+        try{
+        map[bl.getYpos()][bl.getXpos()-1].setColor(#FFFFFF);
+        map[bl.getYpos()][bl.getXpos()].setColor(#CC0000);
+        }catch(Exception e){}
+    }
     
     //test
     //System.out.println(player.get(0).getXpos() +", "+ player.get(0).getYpos());
@@ -303,9 +339,13 @@ void keyPressed(){
     case('r'):case('R'):
       result |=RESUME;
       break;
+<<<<<<< HEAD
       
       //attack
     case(' '):
+=======
+    case('k'):case('K'):
+>>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
       result |=ATTACK;
       break;
   }
@@ -320,7 +360,11 @@ void keyReleased(){
     case('a'):case('A'):result ^=WEST;break;
     case('p'):case('P'):result ^=PAUSE;break;
     case('r'):case('R'):result ^=RESUME;break;
+<<<<<<< HEAD
     case(' '):result ^=ATTACK;break;
+=======
+    case('k'):case('K'):result ^=ATTACK;break;
+>>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
   }
 }
 

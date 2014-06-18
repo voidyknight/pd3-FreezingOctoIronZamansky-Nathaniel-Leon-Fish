@@ -15,6 +15,7 @@ ArrayList<Button> startbuttons = new ArrayList<Button>();
 String playertype;//stores type of player Player is
 ArrayList<Monster> monsters = new ArrayList<Monster>();
 ArrayList<Player> player = new ArrayList<Player>();
+ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 final static int NORTH = 1;
 final static int EAST = 2;
@@ -22,16 +23,16 @@ final static int SOUTH = 4;
 final static int WEST = 8;
 final static int PAUSE = 999;
 final static int RESUME = -999;
+final static int ATTACK = 9999;
 int result;
 int x,y;
 
-//keyboard input works but is slightly buggy
  
 
 void setup(){
   size(1500,300); 
   fill(#009999);
-  frameRate(50);
+  frameRate(30);
   result = 0;
   
  
@@ -118,6 +119,11 @@ void setupMap(String s){//s is player type
 
 
 void draw(){ 
+  
+  if (monsters.isEmpty() && setupyet){
+    level++;
+    setupMap(playertype);//creating a new player though...
+  }
   
   if (level>0&&level<6){ 
   
@@ -208,6 +214,10 @@ void draw(){
           map[29][j].setColor(#009999);
         }
         break;
+      case ATTACK:
+        map[y/10][(x/10)+1].setColor(#CC0000);
+        bullets.add(new Bullet((x/10)+1,y/10));
+        break;
      }
     
      map[y/10][x/10].setColor(#FFFFFF);
@@ -217,7 +227,8 @@ void draw(){
      //monster movement
      
     for(Monster m : monsters){
-      System.out.println("here1 " +m.getXpos() + " " +m.getYpos() );
+      if (paused!=true){
+      //System.out.println("here1 " +m.getXpos() + " " +m.getYpos() );
         Cell nextMove = m.getNextMove();
         while(nextMove == null){
           m.findPath(map[y/10][x/10], map);
@@ -225,7 +236,8 @@ void draw(){
         }
         map[m.getYpos()][m.getXpos()].setColor(#FFFFFF);
         
-        m.setXpos((int)nextMove.getX()/10); m.setYpos((int)nextMove.getY()/10);
+        m.setXpos((int)nextMove.getX()/10);
+        m.setYpos((int)nextMove.getY()/10);
   
         if(m.getType() == 'r'){
           map[m.getYpos()][m.getXpos()].setColor(#4C0099);
@@ -236,9 +248,18 @@ void draw(){
         else if(m.getType() == 'z'){
           map[m.getYpos()][m.getXpos()].setColor(#99004C);
         }
-              System.out.println("here2 " +m.getXpos() + " " +m.getYpos() );
+        //System.out.println("here2 " +m.getXpos() + " " +m.getYpos() );
+      }
     }
     
+    for (Bullet bl : bullets){
+        bl.setXpos((int)(bl.getXpos())+1);
+        bl.setYpos((int)(bl.getYpos()));
+        try{
+        map[bl.getYpos()][bl.getXpos()-1].setColor(#FFFFFF);
+        map[bl.getYpos()][bl.getXpos()].setColor(#CC0000);
+        }catch(Exception e){}
+    }
     
     //test
     //System.out.println(player.get(0).getXpos() +", "+ player.get(0).getYpos());
@@ -276,6 +297,9 @@ void keyPressed(){
     case('r'):case('R'):
       result |=RESUME;
       break;
+    case('k'):case('K'):
+      result |=ATTACK;
+      break;
   }
 }
 
@@ -288,6 +312,7 @@ void keyReleased(){
     case('a'):case('A'):result ^=WEST;break;
     case('p'):case('P'):result ^=PAUSE;break;
     case('r'):case('R'):result ^=RESUME;break;
+    case('k'):case('K'):result ^=ATTACK;break;
   }
 }
 

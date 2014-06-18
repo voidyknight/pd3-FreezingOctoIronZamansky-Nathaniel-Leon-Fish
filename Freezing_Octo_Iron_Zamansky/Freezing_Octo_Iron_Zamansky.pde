@@ -23,11 +23,9 @@ final static int SOUTH = 4;
 final static int WEST = 8;
 final static int PAUSE = 999;
 final static int RESUME = -999;
-<<<<<<< HEAD
-final static int ATTACK = 998;
-=======
-final static int ATTACK = 9999;
->>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
+final static int ATTACK = 500;
+final static int SHOOT = 400;
+
 int result;
 int x,y;
 
@@ -234,14 +232,14 @@ void draw(){
           map[0][j].setColor(#009999);
           map[29][j].setColor(#009999);
         }
-<<<<<<< HEAD
-=======
         break;
-      case ATTACK:
-        map[y/10][(x/10)+1].setColor(#CC0000);
-        bullets.add(new Bullet((x/10)+1,y/10));
+      case SHOOT:
+        if(player.get(0).getSwag() - 5 >= 0){
+           map[y/10][(x/10)+1].setColor(#CC0000);
+           bullets.add(new Bullet((x/10)+1,y/10));
+           player.get(0).setSwag(player.get(0).getSwag() - 5);
+        }
         break;
->>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
      }
     
      map[y/10][x/10].setColor(#FFFFFF);
@@ -251,10 +249,7 @@ void draw(){
      //monster movement
 int count;
     for(Monster m : monsters){
-<<<<<<< HEAD
-=======
       if (paused!=true){
->>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
       //System.out.println("here1 " +m.getXpos() + " " +m.getYpos() );
         Cell nextMove = m.getNextMove();
         count = 0;
@@ -281,26 +276,39 @@ int count;
         else if(m.getType() == 'z'){
           map[m.getYpos()][m.getXpos()].setColor(#99004C);
         }
-<<<<<<< HEAD
+
         }
         count = 0;
     
    //  System.out.println("here2 " +m.getXpos() + " " +m.getYpos() );
 
   }
-=======
-        //System.out.println("here2 " +m.getXpos() + " " +m.getYpos() );
-      }
+
     }
->>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
-    
-    for (Bullet bl : bullets){
+  
+
+    //note to self: make so that you can shoot bullets Nort/South/East/West
+     Bullet bl;
+    for (int x = 0; x < bullets.size(); x ++){
+        bl = bullets.get(x);
         bl.setXpos((int)(bl.getXpos())+1);
         bl.setYpos((int)(bl.getYpos()));
+       
+           
         try{
         map[bl.getYpos()][bl.getXpos()-1].setColor(#FFFFFF);
-        map[bl.getYpos()][bl.getXpos()].setColor(#CC0000);
+        if(map[bl.getYpos()][bl.getXpos()].getColor() == #FFFFFF) 
+           map[bl.getYpos()][bl.getXpos()].setColor(#CC0000);
+        else
+          bullets.remove(x);
         }catch(Exception e){}
+         for(Monster m : monsters){
+          if(m.getXpos()/10 == bl.getXpos()/10 && m.getYpos()/10 == bl.getYpos()/10){
+            m.setHealth(m.getHealth() - 15);
+            bullets.remove(x);
+            map[bl.getYpos()][bl.getXpos()].setColor(#FFFFFF);
+          }
+         }
     }
     
     //test
@@ -339,14 +347,13 @@ void keyPressed(){
     case('r'):case('R'):
       result |=RESUME;
       break;
-<<<<<<< HEAD
-      
-      //attack
+  //attack
     case(' '):
-=======
-    case('k'):case('K'):
->>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
       result |=ATTACK;
+      break;
+  //shoot
+  case('k'):case('K'):
+      result |=SHOOT;
       break;
   }
 }
@@ -360,11 +367,9 @@ void keyReleased(){
     case('a'):case('A'):result ^=WEST;break;
     case('p'):case('P'):result ^=PAUSE;break;
     case('r'):case('R'):result ^=RESUME;break;
-<<<<<<< HEAD
     case(' '):result ^=ATTACK;break;
-=======
-    case('k'):case('K'):result ^=ATTACK;break;
->>>>>>> 1e42aaeb3afa61f09346601e74f2f27528d5903b
+    case('k'):case('K'):result ^=SHOOT;break;
+
   }
 }
 

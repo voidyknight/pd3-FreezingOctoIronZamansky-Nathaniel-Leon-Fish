@@ -62,24 +62,14 @@ public abstract class Player{
     public void setInvisible(boolean n){invisible = n;}
     public void setInvincible(boolean n){invincible = n;}
     
-    /*public void attack(){
-	Monster target = null;
-	for(int x = -1; x < 2; x ++){
-	    for(int y = -1; y < 2; y ++){
-		if(!map.get(x,y).equals(" ") && !map.get(x,y).equals("#") && !map.get(x,y).equals("p")){
-		    target = map.getMonster(x,y);
-		    x += 10;
-		    y += 10;
-		}
-	    }
-	}
-	attack(target);
-    }*/
+
 
 
     public void attack(Monster target){
-	if(target == null)
+	if(target == null){
+System.out.println("idek");  
 	    return;
+}
 	target.setHealth(target.getHealth() - 
 			 ((damage * Math.random()) - target.getDefense()));
     }

@@ -7,7 +7,7 @@ public class K extends Player{
     setHealthRegenSpeed(4);
     setDamage(25);
     setDefense(1.1);
-    setRange(1);
+    setRange(3);
     setName("Son of Konstantin");
     setPhrase("Learn To D&D N00B");
   }

@@ -22,6 +22,7 @@ final static int SOUTH = 4;
 final static int WEST = 8;
 final static int PAUSE = 999;
 final static int RESUME = -999;
+final static int ATTACK = 998;
 int result;
 int x,y;
 
@@ -138,8 +139,25 @@ void draw(){
       }
     }
     
+    for(int x = 0; x < monsters.size(); x ++){
+      if(monsters.get(x).getHealth() <= 0){
+         map[monsters.get(x).getYpos()][monsters.get(x).getXpos()].setColor(#FFFFFF);
+         monsters.remove(x);
+      }
+    }
+  
+        
     
      switch(result) {
+      
+      case ATTACK:
+       for(int a = 0; a < monsters.size(); a ++){
+         if(Math.abs(monsters.get(a).getXpos()+monsters.get(a).getYpos() - (y+x)/10) <= player.get(0).getRange())
+           player.get(0).attack(monsters.get(a));
+           System.out.println(a + " " +monsters.get(a).getHealth() + " " + monsters.get(a).getXpos()+"  "+monsters.get(a).getYpos() + " " + x/10 + " " + y/10);//+player.get(0).getXpos()+"  "+player.get(0).getYpos() );
+       }
+       break;
+       
        
       case NORTH:
        if(map[(y-1)/10][x/10].getColor() == #FFFFFF && paused!=true){
@@ -207,7 +225,6 @@ void draw(){
           map[0][j].setColor(#009999);
           map[29][j].setColor(#009999);
         }
-        break;
      }
     
      map[y/10][x/10].setColor(#FFFFFF);
@@ -215,14 +232,20 @@ void draw(){
      rect(x, y ,10,10);
      
      //monster movement
-     
+int count;
     for(Monster m : monsters){
-      System.out.println("here1 " +m.getXpos() + " " +m.getYpos() );
+      //System.out.println("here1 " +m.getXpos() + " " +m.getYpos() );
         Cell nextMove = m.getNextMove();
-        while(nextMove == null){
+        count = 0;
+        while(nextMove == null && count < 20){
           m.findPath(map[y/10][x/10], map);
           nextMove = m.getNextMove();
+          count ++;
         }
+        /*try{
+        Thread.sleep(10);
+        }catch (InterruptedException e){};*/
+        if(count != 19){
         map[m.getYpos()][m.getXpos()].setColor(#FFFFFF);
         
         m.setXpos((int)nextMove.getX()/10); m.setYpos((int)nextMove.getY()/10);
@@ -236,8 +259,12 @@ void draw(){
         else if(m.getType() == 'z'){
           map[m.getYpos()][m.getXpos()].setColor(#99004C);
         }
-              System.out.println("here2 " +m.getXpos() + " " +m.getYpos() );
-    }
+        }
+        count = 0;
+    
+   //  System.out.println("here2 " +m.getXpos() + " " +m.getYpos() );
+
+  }
     
     
     //test
@@ -276,6 +303,11 @@ void keyPressed(){
     case('r'):case('R'):
       result |=RESUME;
       break;
+      
+      //attack
+    case(' '):
+      result |=ATTACK;
+      break;
   }
 }
 
@@ -288,6 +320,7 @@ void keyReleased(){
     case('a'):case('A'):result ^=WEST;break;
     case('p'):case('P'):result ^=PAUSE;break;
     case('r'):case('R'):result ^=RESUME;break;
+    case(' '):result ^=ATTACK;break;
   }
 }
 

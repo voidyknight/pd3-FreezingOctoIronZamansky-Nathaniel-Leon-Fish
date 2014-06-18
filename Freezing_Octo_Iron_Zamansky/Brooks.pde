@@ -6,7 +6,7 @@ public class Brooks extends Player{
     setHealthRegenSpeed(6);
     setDamage(100/6);
     setDefense(5);
-    setRange(1);
+    setRange(3);
     setName("Santa Clause");
     setPhrase("HoHoHo");
   }

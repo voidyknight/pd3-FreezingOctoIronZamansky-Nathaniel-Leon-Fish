@@ -135,14 +135,7 @@ void draw(){
   
     background(255);
     
-    if (setupyet==(false)){
-      minim = new Minim(this);
-      audioPlayer = minim.loadFile("Song.mp3", 2048);
-      audioPlayer.play();
-      
-      setupMap(playertype);
-      setupyet=true;
-    }
+   
     
     for (int i=0;i<rows;i++){
       for (int j=0;j<cols;j++){
@@ -326,6 +319,14 @@ int count;
     //test
     //System.out.println(player.get(0).getXpos() +", "+ player.get(0).getYpos());
   }
+   if (setupyet==(false)){
+      minim = new Minim(this);
+      audioPlayer = minim.loadFile("Song.mp3", 2048);
+      audioPlayer.play();
+      
+      setupMap(playertype);
+      setupyet=true;
+    }
   
   else if (level==0){
     for (Button b : startbuttons){

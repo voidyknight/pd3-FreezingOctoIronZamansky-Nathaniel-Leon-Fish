@@ -12,7 +12,7 @@ Leon Frajmund, <i>our resident angry man</i><br>
 Nathaniel "Tim" Brassell, <i>our resident bad-ass Digiman guy</i><br><br>
 	
 <h1>II. DESCRIPTION</h1><br><br>
-We are doing an rpg-style game involving the comp sci department involving an ASCII map [similar to the maze thing we did in class]<br><br>
+We are doing an rpg-style game involving the comp sci department with processing<br><br>
 
 <h1>III. WHAT WORKS</h1><br><br>
 Maps show up in processing<br><br>

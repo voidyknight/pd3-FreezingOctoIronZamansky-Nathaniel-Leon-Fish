@@ -23,5 +23,19 @@ FISH: in MapProcessing, I created 2 ArrayLists of monsters and the player. When 
 FISH: Leon and I fixed the moving through walls bug! :D<br>
 FISH: Technically done on the morning of the 13th, but whatever...started working on the actual gameplay interface.
 
+6/13/14<br>
+FISH: continued work on gameplay interface
+
+6/14/14<br>
+FISH: Got start screen to work, added background music, made pause/resume buttons
+
+6/15/14<br>
+
+6/16/14<br>
+
+6/17/14<br>
+FISH: started work on attack [k key]
+
+
 5/29/14 - 6/10/14<br>
 Nathaniel: Teacher classes made, maps made.
